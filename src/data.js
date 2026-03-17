@@ -240,9 +240,7 @@ export const projects = [
     image: "/assets/mockup_logos.png",
     link: "gallery",
     galleryImages: [
-      "/assets/mockup_logos.png",
       "/assets/mockup_social_media.png",
-      "/assets/mockup_branding.png",
     ],
     title: { es: "Diseño de Logos", en: "Logo Design" },
     desc: { es: "Creación de identidad visual y logotipos profesionales para marcas y emprendimientos.", en: "Professional logo and visual identity creation for brands and businesses." }
@@ -252,15 +250,10 @@ export const projects = [
     image: "/assets/social_bk_post.jpg",
     link: "gallery",
     galleryImages: [
-      "/assets/mockup_flyers.png",
       "/assets/social_bk_post.jpg",
       "/assets/social_bk_flyer_1.jpg",
       "/assets/social_bk_flyer_2.jpg",
       "/assets/social_mcdonalds.jpg",
-      "/assets/social_branding_1.jpg",
-      "/assets/social_branding_2.jpg",
-      "/assets/social_branding_3.jpg",
-      "/assets/mini_flyer_design_1772816316888.png",
     ],
     title: { es: "Flyers Publicitarios", en: "Advertising Flyers" },
     desc: { es: "Diseño de flyers promocionales y piezas gráficas para distintas marcas, eventos y campañas publicitarias.", en: "Design of promotional flyers and graphic pieces for various brands, events, and advertising campaigns." }
@@ -303,11 +296,12 @@ export const projects = [
   },
   {
     category: "social",
-    image: "/assets/mockup_branding.png",
+    image: "/assets/social_branding_1.jpg",
     link: "gallery",
     galleryImages: [
-      "/assets/mockup_branding.png",
-      "/assets/mockup_logos.png",
+      "/assets/social_branding_1.jpg",
+      "/assets/social_branding_2.jpg",
+      "/assets/social_branding_3.jpg",
       "/assets/mini_flyer_design_1772816316888.png",
     ],
     title: { es: "Branding Completo", en: "Full Branding" },

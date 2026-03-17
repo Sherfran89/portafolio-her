@@ -1,20 +1,75 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 
 export default function GalleryModal({ images = [], videos = [], title, onClose }) {
-  const items = [...videos.map(id => ({ type: 'video', src: id })), ...images.map(url => ({ type: 'image', src: url }))];
+  const items = useMemo(() => [
+    ...videos.map(id => ({ type: 'video', src: id })),
+    ...images.map(url => ({ type: 'image', src: url })),
+  ], [videos, images]);
+
   const [current, setCurrent] = useState(0);
-  const [direction, setDirection] = useState(1);
+  const [animState, setAnimState] = useState('idle');
+  const isAnimating = useRef(false);
+  const currentRef = useRef(0);
 
-  const prev = useCallback(() => {
-    setDirection(-1);
-    setCurrent(c => (c - 1 + items.length) % items.length);
+  // Keep ref in sync with state
+  useEffect(() => {
+    currentRef.current = current;
+  }, [current]);
+
+  // Preload adjacent images
+  useEffect(() => {
+    const len = items.length;
+    if (!len) return;
+    const preload = (index) => {
+      if (items[index] && items[index].type === 'image') {
+        new Image().src = items[index].src;
+      }
+    };
+    preload((current + 1) % len);
+    preload((current - 1 + len) % len);
+  }, [current, items]);
+
+  const navigate = useCallback((dir) => {
+    if (isAnimating.current) return;
+    isAnimating.current = true;
+    const len = items.length;
+    const next = (currentRef.current + dir + len) % len;
+
+    setAnimState(dir > 0 ? 'exit-left' : 'exit-right');
+
+    setTimeout(() => {
+      setCurrent(next);
+      setAnimState(dir > 0 ? 'enter-right' : 'enter-left');
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setAnimState('idle');
+          isAnimating.current = false;
+        });
+      });
+    }, 200);
   }, [items.length]);
 
-  const next = useCallback(() => {
-    setDirection(1);
-    setCurrent(c => (c + 1) % items.length);
-  }, [items.length]);
+  const goTo = useCallback((index) => {
+    if (isAnimating.current || index === currentRef.current) return;
+    isAnimating.current = true;
+    const dir = index > currentRef.current ? 1 : -1;
+
+    setAnimState(dir > 0 ? 'exit-left' : 'exit-right');
+
+    setTimeout(() => {
+      setCurrent(index);
+      setAnimState(dir > 0 ? 'enter-right' : 'enter-left');
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setAnimState('idle');
+          isAnimating.current = false;
+        });
+      });
+    }, 200);
+  }, []);
+
+  const prev = useCallback(() => navigate(-1), [navigate]);
+  const next = useCallback(() => navigate(1), [navigate]);
 
   useEffect(() => {
     const handleKey = (e) => {
@@ -30,27 +85,23 @@ export default function GalleryModal({ images = [], videos = [], title, onClose 
     };
   }, [onClose, prev, next]);
 
-  const variants = {
-    enter: (dir) => ({ x: dir > 0 ? '100%' : '-100%', opacity: 0 }),
-    center: { x: 0, opacity: 1, transition: { type: 'spring', stiffness: 300, damping: 30 } },
-    exit: (dir) => ({ x: dir > 0 ? '-100%' : '100%', opacity: 0, transition: { duration: 0.2 } }),
+  const getSlideStyle = () => {
+    const base = { transition: 'transform 200ms ease, opacity 200ms ease', willChange: 'transform, opacity' };
+    switch (animState) {
+      case 'exit-left':   return { ...base, transform: 'translateX(-50px)', opacity: 0 };
+      case 'exit-right':  return { ...base, transform: 'translateX(50px)',  opacity: 0 };
+      case 'enter-right': return { transition: 'none', transform: 'translateX(50px)',  opacity: 0, willChange: 'transform, opacity' };
+      case 'enter-left':  return { transition: 'none', transform: 'translateX(-50px)', opacity: 0, willChange: 'transform, opacity' };
+      default:            return { ...base, transform: 'translateX(0)',      opacity: 1 };
+    }
   };
 
+  if (!items.length) return null;
+
   return (
-    <motion.div
-      className="gallery-overlay"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      onClick={onClose}
-    >
-      <motion.div
-        className="gallery-modal"
-        initial={{ scale: 0.92, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.92, opacity: 0 }}
-        onClick={(e) => e.stopPropagation()}
-      >
+    <div className="gallery-overlay" style={{ animation: 'fadeIn 180ms ease both' }} onClick={onClose}>
+      <div className="gallery-modal" style={{ animation: 'scaleIn 200ms ease both' }} onClick={(e) => e.stopPropagation()}>
+
         {/* Header */}
         <div className="gallery-header">
           <h3 className="gallery-title">{title}</h3>
@@ -60,37 +111,27 @@ export default function GalleryModal({ images = [], videos = [], title, onClose 
 
         {/* Viewport */}
         <div className="gallery-viewport">
-          <AnimatePresence initial={false} custom={direction} mode="popLayout">
-            <motion.div
-              key={current}
-              className="gallery-item-container"
-              custom={direction}
-              variants={variants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-            >
-              {items[current].type === 'video' ? (
-                <iframe
-                  className="gallery-video"
-                  src={`https://www.youtube.com/embed/${items[current].src}?autoplay=1`}
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              ) : (
-                <img
-                  src={items[current].src}
-                  alt={`${title} - imagen ${current + 1}`}
-                  className="gallery-img"
-                  draggable={false}
-                />
-              )}
-            </motion.div>
-          </AnimatePresence>
+          <div className="gallery-item-container" style={getSlideStyle()}>
+            {items[current].type === 'video' ? (
+              <iframe
+                className="gallery-video"
+                src={`https://www.youtube.com/embed/${items[current].src}?autoplay=1`}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            ) : (
+              <img
+                src={items[current].src}
+                alt={`${title} - imagen ${current + 1}`}
+                className="gallery-img"
+                draggable={false}
+                loading="eager"
+              />
+            )}
+          </div>
 
-          {/* Nav arrows */}
           {items.length > 1 && (
             <>
               <button className="gallery-nav gallery-nav-prev" onClick={prev} aria-label="Anterior">
@@ -114,13 +155,13 @@ export default function GalleryModal({ images = [], videos = [], title, onClose 
               <button
                 key={i}
                 className={`gallery-dot ${i === current ? 'active' : ''}`}
-                onClick={() => { setDirection(i > current ? 1 : -1); setCurrent(i); }}
+                onClick={() => goTo(i)}
                 aria-label={`Elemento ${i + 1}`}
               />
             ))}
           </div>
         )}
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   );
 }

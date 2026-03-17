@@ -132,6 +132,7 @@ export default function Portfolio({ t, lang }) {
         {gallery && (
           <GalleryModal
             images={gallery.images}
+            videos={gallery.videos}
             title={gallery.title}
             onClose={() => setGallery(null)}
           />

@@ -334,6 +334,32 @@ export const projects = [
     title: { es: "Branding Completo", en: "Full Branding" },
     desc: { es: "Desarrollo integral de marca: naming, paleta, tipografías, manual de identidad y aplicaciones.", en: "Comprehensive brand development: naming, palette, typography, identity manual and applications." }
   },
+  {
+    category: "social",
+    image: "/assets/photo_prof_1.jpg",
+    link: "gallery",
+    galleryImages: [
+      "/assets/photo_prof_1.jpg",
+      "/assets/photo_prof_2.jpg",
+      "/assets/photo_prof_3.jpg",
+      "/assets/photo_prof_4.jpg",
+    ],
+    title: { es: "Fotografía Editorial", en: "Editorial Photography" },
+    desc: { es: "Sesiones fotográficas de alta calidad con enfoque en dirección de arte, iluminación de estudio y post-producción profesional.", en: "High-quality photo shoots with a focus on art direction, studio lighting, and professional post-production." }
+  },
+  {
+    category: "social",
+    image: "/assets/photo_lifestyle_1.jpg",
+    link: "gallery",
+    galleryImages: [
+      "/assets/photo_lifestyle_1.jpg",
+      "/assets/photo_lifestyle_2.jpg",
+      "/assets/photo_lifestyle_3.jpg",
+      "/assets/photo_lifestyle_4.jpg",
+    ],
+    title: { es: "Lifestyle & iPhone", en: "Lifestyle & iPhone" },
+    desc: { es: "Captura de momentos auténticos y contenido estético 'casual' optimizado para redes sociales utilizando dispositivos móviles de alta gama.", en: "Capture of authentic moments and 'casual' aesthetic content optimized for social media using high-end mobile devices." }
+  },
   // Extra - Music, Voice, Video
   {
     category: "extra",

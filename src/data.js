@@ -378,10 +378,10 @@ export const projects = [
   },
   {
     category: "extra",
-    image: "/assets/mini_video_edit_1772816300653.png",
-    link: "#",
-    title: { es: "Edición de Videos", en: "Video Editing" },
-    desc: { es: "Edición creativa de reels, spots publicitarios, videos institucionales y contenido para YouTube y redes.", en: "Creative editing of reels, commercials, corporate videos, and content for YouTube and social media." }
+    image: "/assets/mockup_video.png",
+    link: "gallery",
+    youtubeIds: ["FM8jpEvwBRc", "C2yjyIduTMo", "TWHiTfw0Y54"],
+    title: { es: "Edición de Video", en: "Video Editing" },
+    desc: { es: "Montaje audiovisual, corrección de color y storytelling dinámico para redes sociales, publicidad y contenido institucional.", en: "Audiovisual editing, color correction, and dynamic storytelling for social media, advertising, and institutional content." }
   }
 ];
-

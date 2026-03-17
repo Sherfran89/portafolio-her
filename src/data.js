@@ -5,7 +5,7 @@ export const translations = {
       nav_testimonials: "Testimonios",
       nav_about: "Sobre Mí",
       nav_contact: "Hablemos",
-      hero_subtitle: "Full-Stack Digital Strategist",
+      hero_subtitle: "Full-Stack Digital Strategist ✨",
       hero_title: "Diseño experiencias digitales que <span>elevan tu marca</span> y atraen clientes reales.",
       hero_desc: "Desarrollo web estratégico y gestión de comunidades para posicionarte como líder en tu sector.",
       hero_cta: "Iniciar mi Proyecto",

@@ -364,7 +364,8 @@ export const projects = [
   {
     category: "extra",
     image: "/assets/mockup_editing.png",
-    link: "#",
+    link: "gallery",
+    youtubeIds: ["oodbsIXCb2A", "SVpwNSaaQ7k", "QCwv0_ZvFKw"],
     title: { es: "Producción Musical", en: "Music Production" },
     desc: { es: "Composición y producción de jingles, música de fondo e identidad sonora para marcas y proyectos audiovisuales.", en: "Composition and production of jingles, background music, and sonic identity for brands and audiovisual projects." }
   },

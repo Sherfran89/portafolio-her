@@ -1,19 +1,20 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-export default function GalleryModal({ images, title, onClose }) {
+export default function GalleryModal({ images = [], videos = [], title, onClose }) {
+  const items = [...videos.map(id => ({ type: 'video', src: id })), ...images.map(url => ({ type: 'image', src: url }))];
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(1);
 
   const prev = useCallback(() => {
     setDirection(-1);
-    setCurrent(c => (c - 1 + images.length) % images.length);
-  }, [images.length]);
+    setCurrent(c => (c - 1 + items.length) % items.length);
+  }, [items.length]);
 
   const next = useCallback(() => {
     setDirection(1);
-    setCurrent(c => (c + 1) % images.length);
-  }, [images.length]);
+    setCurrent(c => (c + 1) % items.length);
+  }, [items.length]);
 
   useEffect(() => {
     const handleKey = (e) => {
@@ -53,29 +54,44 @@ export default function GalleryModal({ images, title, onClose }) {
         {/* Header */}
         <div className="gallery-header">
           <h3 className="gallery-title">{title}</h3>
-          <span className="gallery-counter">{current + 1} / {images.length}</span>
+          <span className="gallery-counter">{current + 1} / {items.length}</span>
           <button className="gallery-close" onClick={onClose} aria-label="Cerrar">✕</button>
         </div>
 
-        {/* Image carousel */}
+        {/* Viewport */}
         <div className="gallery-viewport">
           <AnimatePresence initial={false} custom={direction} mode="popLayout">
-            <motion.img
+            <motion.div
               key={current}
-              src={images[current]}
-              alt={`${title} - imagen ${current + 1}`}
-              className="gallery-img"
+              className="gallery-item-container"
               custom={direction}
               variants={variants}
               initial="enter"
               animate="center"
               exit="exit"
-              draggable={false}
-            />
+            >
+              {items[current].type === 'video' ? (
+                <iframe
+                  className="gallery-video"
+                  src={`https://www.youtube.com/embed/${items[current].src}?autoplay=1`}
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              ) : (
+                <img
+                  src={items[current].src}
+                  alt={`${title} - imagen ${current + 1}`}
+                  className="gallery-img"
+                  draggable={false}
+                />
+              )}
+            </motion.div>
           </AnimatePresence>
 
           {/* Nav arrows */}
-          {images.length > 1 && (
+          {items.length > 1 && (
             <>
               <button className="gallery-nav gallery-nav-prev" onClick={prev} aria-label="Anterior">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -92,14 +108,14 @@ export default function GalleryModal({ images, title, onClose }) {
         </div>
 
         {/* Dots */}
-        {images.length > 1 && (
+        {items.length > 1 && (
           <div className="gallery-dots">
-            {images.map((_, i) => (
+            {items.map((_, i) => (
               <button
                 key={i}
                 className={`gallery-dot ${i === current ? 'active' : ''}`}
                 onClick={() => { setDirection(i > current ? 1 : -1); setCurrent(i); }}
-                aria-label={`Imagen ${i + 1}`}
+                aria-label={`Elemento ${i + 1}`}
               />
             ))}
           </div>

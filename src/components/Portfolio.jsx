@@ -24,8 +24,12 @@ export default function Portfolio({ t, lang }) {
   };
 
   const handleCardAction = (proj) => {
-    if (proj.link === 'gallery' && proj.galleryImages) {
-      setGallery({ images: proj.galleryImages, title: proj.title[lang] });
+    if (proj.link === 'gallery') {
+      setGallery({ 
+        images: proj.galleryImages || [], 
+        videos: proj.youtubeIds || [],
+        title: proj.title[lang] 
+      });
     }
   };
 

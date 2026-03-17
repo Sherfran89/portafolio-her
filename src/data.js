@@ -371,10 +371,11 @@ export const projects = [
   },
   {
     category: "extra",
-    image: "/assets/mockup_social_media.png",
-    link: "#",
+    image: "/assets/mockup_voice.png",
+    link: "gallery",
+    youtubeIds: ["Ohfy78llB8E", "osEP1P4A-KM"],
     title: { es: "Voz en Off", en: "Voice Over" },
-    desc: { es: "Locución profesional para publicidades, videos institucionales, e-learning y contenido para redes sociales.", en: "Professional voice-over for ads, corporate videos, e-learning, and social media content." }
+    desc: { es: "Narraciones profesionales, doblaje y spots publicitarios con una identidad vocal única para potenciar cualquier mensaje.", en: "Professional voice-over for ads, corporate videos, e-learning, and social media content." }
   },
   {
     category: "extra",

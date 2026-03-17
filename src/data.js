@@ -237,30 +237,6 @@ export const projects = [
   // Social Media Manager Projects
   {
     category: "social",
-    image: "/assets/social_bk_post.jpg",
-    link: "gallery",
-    galleryImages: [
-      "/assets/social_bk_post.jpg",
-      "/assets/social_bk_flyer_1.jpg",
-      "/assets/social_bk_flyer_2.jpg",
-    ],
-    title: { es: "Estrategia Burger King", en: "Burger King Strategy" },
-    desc: { es: "Desarrollo de contenido para redes sociales y diseño de flyers promocionales para campañas de Burger King.", en: "Social media content development and promotional flyer design for Burger King campaigns." }
-  },
-  {
-    category: "social",
-    image: "/assets/social_branding_1.jpg",
-    link: "gallery",
-    galleryImages: [
-      "/assets/social_branding_1.jpg",
-      "/assets/social_branding_2.jpg",
-      "/assets/social_branding_3.jpg",
-    ],
-    title: { es: "Branding de Tareas", en: "Task Branding" },
-    desc: { es: "Diseño de identidad visual y piezas gráficas para plataformas de gestión de tareas.", en: "Visual identity design and graphic pieces for task management platforms." }
-  },
-  {
-    category: "social",
     image: "/assets/mockup_logos.png",
     link: "gallery",
     galleryImages: [
@@ -273,18 +249,21 @@ export const projects = [
   },
   {
     category: "social",
-    image: "/assets/mockup_flyers.png",
+    image: "/assets/social_bk_post.jpg",
     link: "gallery",
     galleryImages: [
       "/assets/mockup_flyers.png",
-      "/assets/mini_flyer_design_1772816316888.png",
-      "/assets/mockup_feed.png",
+      "/assets/social_bk_post.jpg",
       "/assets/social_bk_flyer_1.jpg",
       "/assets/social_bk_flyer_2.jpg",
       "/assets/social_mcdonalds.jpg",
+      "/assets/social_branding_1.jpg",
+      "/assets/social_branding_2.jpg",
+      "/assets/social_branding_3.jpg",
+      "/assets/mini_flyer_design_1772816316888.png",
     ],
-    title: { es: "Flyers & Gráficas", en: "Flyers & Graphics" },
-    desc: { es: "Diseño de flyers promocionales, piezas gráficas y material visual para eventos y campañas.", en: "Design of promotional flyers, graphic pieces, and visual material for events and campaigns." }
+    title: { es: "Flyers Publicitarios", en: "Advertising Flyers" },
+    desc: { es: "Diseño de flyers promocionales y piezas gráficas para distintas marcas, eventos y campañas publicitarias.", en: "Design of promotional flyers and graphic pieces for various brands, events, and advertising campaigns." }
   },
   {
     category: "social",

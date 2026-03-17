@@ -363,7 +363,7 @@ export const projects = [
   // Extra - Music, Voice, Video
   {
     category: "extra",
-    image: "/assets/mockup_editing.png",
+    image: "/assets/mockup_music.png",
     link: "gallery",
     youtubeIds: ["oodbsIXCb2A", "SVpwNSaaQ7k", "QCwv0_ZvFKw"],
     title: { es: "Producción Musical", en: "Music Production" },

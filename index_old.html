@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hernán Francini | Full-Stack Digital Strategist</title>
+    <meta name="description"
+        content="Portafolio de Hernán Francini. Especialista en Desarrollo Web, Estrategia Digital e Inteligencia Artificial.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Montserrat:wght@600;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">H.FRANCINI<span class="dot">.</span></a>
+            <div class="nav-links">
+                <a href="#services" data-i18n="nav_services">Servicios</a>
+                <a href="#portfolio" data-i18n="nav_portfolio">Portafolio</a>
+                <a href="#testimonials" data-i18n="nav_testimonials">Testimonios</a>
+                <a href="#about" data-i18n="nav_about">Sobre Mí</a>
+            </div>
+            <div class="nav-actions">
+                <button class="lang-switch" id="langToggle">EN</button>
+                <a href="#contact" class="btn btn-primary" data-i18n="nav_contact">Hablemos</a>
+                <button class="hamburger" id="mobileMenuBtn">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-bg">
+            <img src="assets/hero_bg.png" alt="Background pattern" loading="lazy">
+            <div class="overlay"></div>
+        </div>
+
+        <div class="hero-container">
+            <div class="hero-content fade-up">
+                <p class="subtitle" data-i18n="hero_subtitle">Full-Stack Digital Strategist</p>
+                <h1 data-i18n="hero_title">Diseño experiencias digitales que <span>elevan tu marca</span> y atraen
+                    clientes reales.</h1>
+                <p class="description" data-i18n="hero_desc">Desarrollo web estratégico y gestión de comunidades para
+                    posicionarte como líder en tu sector.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary btn-large" data-i18n="hero_cta">Iniciar mi Proyecto</a>
+                    <a href="#services" class="btn btn-secondary btn-large" data-i18n="hero_sec_cta">Descubrir mis
+                        servicios</a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper fade-in">
+                <div class="glow-ring"></div>
+                <img src="assets/profile_photo.png" alt="Hernán Francini" class="profile-photo">
+            </div>
+        </div>
+    </header>
+
+    <!-- Tech Stack Marquee -->
+    <div class="marquee">
+        <div class="marquee-content">
+            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React</span><span>Figma</span><span>Meta
+                Ads</span><span>ChatGPT</span><span>Gemini</span><span>Nano Banana
+                Pro</span><span>Canva</span><span>CapCut</span><span>Antigravity</span><span>Sora2</span><span>Veo3</span>
+            <!-- Duplicate for infinite scroll loop -->
+            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React</span><span>Figma</span><span>Meta
+                Ads</span><span>ChatGPT</span><span>Gemini</span><span>Nano Banana
+                Pro</span><span>Canva</span><span>CapCut</span><span>Antigravity</span><span>Sora2</span><span>Veo3</span>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2 data-i18n="services_title">Mis Servicios</h2>
+                <p data-i18n="services_subtitle">Soluciones integrales de alto impacto para negocios modernos.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service 1: Web Dev -->
+                <div class="service-card fade-up">
+                    <div class="card-icon">
+                        <img src="assets/icon_frontend.png" alt="Desarrollo Web">
+                    </div>
+                    <h3 data-i18n="serv1_title">1. Desarrollo de Software</h3>
+                    <p data-i18n="serv1_desc">Diseño de Landing Pages para captación, portafolios digitales inmersivos y optimización extrema de sitios web para máxima velocidad y retención (Frontend UI/UX).</p>
+                </div>
+
+                <!-- Service 2: Marketing -->
+                <div class="service-card fade-up" style="transition-delay: 0.1s;">
+                    <div class="card-icon">
+                        <img src="assets/icon_marketing.png" alt="Estrategia Digital">
+                    </div>
+                    <h3 data-i18n="serv2_title">2. Marketing & Contenidos</h3>
+                    <p data-i18n="serv2_desc">Gestión estratégica integral de redes: calendarios de contenido, creación de piezas visuales coherentes con tu marca y consultoría para tiendas E-commerce.</p>
+                </div>
+
+                <!-- Service 3: Audiovisual -->
+                <div class="service-card fade-up" style="transition-delay: 0.2s;">
+                    <div class="card-icon">
+                        <!-- Reusing ai icon or simple svg for now -->
+                        <div style="font-size: 3rem; line-height: 1; text-align: left; margin-bottom: 20px;">🎥</div>
+                    </div>
+                    <h3 data-i18n="serv3_title">3. Pixel Studio (Producción)</h3>
+                    <p data-i18n="serv3_desc">Fotografía de producto profesional orientada a ventas, cobertura visual para eventos y edición de video dinámico para Reels / TikTok que dominan el algoritmo.</p>
+                </div>
+
+                <!-- Service 4: AI -->
+                <div class="service-card fade-up" style="transition-delay: 0.3s;">
+                    <div class="card-icon">
+                        <img src="assets/icon_ai.png" alt="Inteligencia Artificial">
+                    </div>
+                    <h3 data-i18n="serv4_title">4. Innovación con I.A.</h3>
+                    <p data-i18n="serv4_desc">Consultoría en creación de avatares/modelos generados por IA para marcas, voces sintetizadas, y estructuración automatizada de ebooks o infoproductos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2 data-i18n="port_title">Proyectos Destacados</h2>
+                <p data-i18n="port_subtitle">Una selección de mis mejores trabajos y casos de éxito reales.</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="portfolio-filters fade-up">
+                <button class="filter-btn active" data-filter="all" data-i18n="filter_all">Todos</button>
+                <button class="filter-btn" data-filter="dev" data-i18n="filter_dev">Cifrado / Código</button>
+                <button class="filter-btn" data-filter="social" data-i18n="filter_social">Comunidad</button>
+                <button class="filter-btn" data-filter="extra" data-i18n="filter_extra">Proyectos Extras</button>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="portfolio-grid">
+                <!-- Programmer Project -->
+                <div class="port-card filter-item dev fade-up">
+                    <div class="port-img dev-bg" style="background-image: url('assets/mockup_pixelstudio.png')">
+                        <div class="port-overlay">
+                            <a href="https://pixelstudiocba.netlify.app" target="_blank" class="btn btn-primary"
+                                data-i18n="port_view">Visitar Sitio</a>
+                        </div>
+                    </div>
+                    <div class="port-info">
+                        <h3 data-i18n="port_p1_title">Pixel Studio</h3>
+                        <p data-i18n="port_p1_desc">Landing Page premium para estudio creativo con animaciones y dark
+                            mode.</p>
+                    </div>
+                </div>
+
+                <!-- Social Media Project -->
+                <div class="port-card filter-item social fade-up" style="transition-delay: 0.1s;">
+                    <div class="port-img social-bg" style="background-image: url('assets/mockup_social_media.png')">
+                        <div class="port-overlay">
+                            <a href="#" class="btn btn-primary" data-i18n="port_view">Ver Campaña</a>
+                        </div>
+                    </div>
+                    <div class="port-info">
+                        <h3 data-i18n="port_p2_title">Gestión de Redes / Branding</h3>
+                        <p data-i18n="port_p2_desc">Estrategia de identidad visual, rediseño de feed y crecimiento
+                            constante.</p>
+                    </div>
+                </div>
+
+                <!-- Extras Project -->
+                <div class="port-card filter-item extra fade-up" style="transition-delay: 0.2s;">
+                    <div class="port-img extra-bg" style="background-image: url('assets/mockup_editing.png')">
+                        <div class="port-overlay">
+                            <a href="#" class="btn btn-primary" data-i18n="port_view">Ver Producción</a>
+                        </div>
+                    </div>
+                    <div class="port-info">
+                        <h3 data-i18n="port_p3_title">Locución & Edición Video</h3>
+                        <p data-i18n="port_p3_desc">Producción audiovisual completa combinando IA, Premiere Pro y
+                            Locución profesional.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Prop Section -->
+    <section class="value-prop section dark-bg">
+        <div class="container value-flex fade-up">
+            <div class="value-text">
+                <h2 data-i18n="value_title">¿Por qué un <span>generalista experto</span> es tu mejor inversión?</h2>
+                <p data-i18n="value_desc1">El problema de contratar múltiples agencias o freelancers separados es la
+                    desconexión. El diseñador no entiende de código, y el programador no sabe de ventas. Eso agota tu
+                    presupuesto y retrasa lanzamientos.</p>
+                <p data-i18n="value_desc2">Yo cierro esa brecha. Al unificar la visión técnica (código impecable) con la
+                    estrategia comercial (copywriting y marketing), entrego productos cohesivos que funcionan desde el
+                    día uno y consiguen resultados medibles.</p>
+            </div>
+            <div class="value-stats">
+                <div class="stat-box">
+                    <span class="stat-num">100%</span>
+                    <span class="stat-label" data-i18n="stat1">Enfoque en Conversión</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-num">3x</span>
+                    <span class="stat-label" data-i18n="stat2">Más Rapidez</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="process section dark-bg">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2 data-i18n="proc_title">Mi Proceso de Trabajo</h2>
+                <p data-i18n="proc_subtitle">De la idea al lanzamiento en 3 simples pasos.</p>
+            </div>
+            <div class="process-grid">
+                <div class="proc-step fade-up">
+                    <div class="proc-num">01</div>
+                    <h3 data-i18n="proc_s1_t">Descubrimiento</h3>
+                    <p data-i18n="proc_s1_d">Llamada inicial para entender tus metas, analizar tu negocio y definir la
+                        estrategia exacta.</p>
+                </div>
+                <div class="proc-step fade-up" style="transition-delay: 0.1s;">
+                    <div class="proc-num">02</div>
+                    <h3 data-i18n="proc_s2_t">Desarrollo & Diseño</h3>
+                    <p data-i18n="proc_s2_d">Manos a la obra. Estructuro el diseño visual y escribo código limpio para
+                        un rendimiento óptimo.</p>
+                </div>
+                <div class="proc-step fade-up" style="transition-delay: 0.2s;">
+                    <div class="proc-num">03</div>
+                    <h3 data-i18n="proc_s3_t">Lanzamiento</h3>
+                    <p data-i18n="proc_s3_d">Revisión final, despliegue del proyecto y entrega de las llaves de tu nueva
+                        plataforma.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2 data-i18n="test_title">Lo que dicen mis clientes</h2>
+                <p data-i18n="test_subtitle">Resultados reales para negocios reales.</p>
+            </div>
+
+            <div class="testimonial-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card fade-up">
+                    <div class="test-content">
+                        <p class="quote" data-i18n="test1_quote">"Tiene una habilidad única para conectar con la
+                            audiencia. Además, sus conocimientos en programación fueron clave para optimizar nuestras
+                            plataformas digitales."</p>
+                    </div>
+                    <div class="test-author">
+                        <div class="author-avatar">N</div>
+                        <div class="author-info">
+                            <h4>Natalia</h4>
+                            <span data-i18n="test1_role">Forrajeria Mis Consentidos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card fade-up" style="transition-delay: 0.1s;">
+                    <div class="test-content">
+                        <p class="quote" data-i18n="test2_quote">"Su capacidad para manejar tanto la gestión de
+                            comunidades como el desarrollo técnico con tanta soltura es realmente inspiradora. ¡Un gran
+                            aporte!"</p>
+                    </div>
+                    <div class="test-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <h4>Agustina</h4>
+                            <span data-i18n="test2_role">Estudio Jurídico Idiart Troglia</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card fade-up" style="transition-delay: 0.2s;">
+                    <div class="test-content">
+                        <p class="quote" data-i18n="test3_quote">"Hernán es un crack total. Llevó nuestra presencia en
+                            redes a otro nivel, y su expertise nos permitió implementar soluciones innovadoras."</p>
+                    </div>
+                    <div class="test-author">
+                        <div class="author-avatar">J</div>
+                        <div class="author-info">
+                            <h4>Jazmín</h4>
+                            <span data-i18n="test3_role">Femmina LAB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card fade-up" style="transition-delay: 0.3s;">
+                    <div class="test-content">
+                        <p class="quote" data-i18n="test4_quote">"Su atención al detalle y habilidad para manejar
+                            múltiples tareas es impresionante. Siempre entrega alta calidad. Muy recomendable."</p>
+                    </div>
+                    <div class="test-author">
+                        <div class="author-avatar">D</div>
+                        <div class="author-info">
+                            <h4>Damián</h4>
+                            <span data-i18n="test4_role">AETTECH</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container about-grid fade-up">
+            <div class="about-text">
+                <h2 data-i18n="about_title">Un poco más sobre mí</h2>
+                <p data-i18n="about_p1">Hola, soy Hernán Francini, profesional radicado en Córdoba, Argentina. Mi pasión
+                    siempre ha sido encontrar el punto exacto donde la creatividad visual choca con la lógica técnica
+                    perfecta.</p>
+                <p data-i18n="about_p2">Tras años de perfeccionarme tanto en el código (Frontend) como en la
+                    comunicación (Community Management, Copywriting, Edición de Video), he construido un perfil único
+                    preparado para afrontar desafíos digitales de extremo a extremo.</p>
+                <p class="highlight" data-i18n="about_highlight">Mi misión es simple: asegurarme de que mi cliente gane
+                    más de lo que invierte en mí.</p>
+                <div class="cv-buttons"
+                    style="display: flex; gap: 16px; margin-top: 32px; justify-content: center; flex-wrap: wrap;">
+                    <a href="assets/CV_Programador.pdf" target="_blank" class="btn btn-secondary"
+                        data-i18n="about_cv_dev">CV Programador</a>
+                    <a href="assets/CV_CommunityManager.pdf" target="_blank" class="btn btn-secondary"
+                        data-i18n="about_cv_cm">CV Community Manager</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing section dark-bg">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2 data-i18n="price_title">Paquetes de Inversión</h2>
+                <p data-i18n="price_subtitle">Transparencia total. Elige el plan que mejor se adapte a la etapa de tu
+                    negocio.</p>
+            </div>
+
+            <!-- Packs de Lanzamiento -->
+            <h3 class="fade-up fire-text" style="text-align: center; margin-bottom: 20px; font-size: 2.5rem; text-transform: uppercase;">🔥 Packs de Lanzamiento</h3>
+            <p class="fade-up" style="text-align: center; margin-bottom: 40px; color: var(--text-muted);">La solución completa: Desarrollo Web + Audiovisual + Redes Sociales. Diseñado para potenciar tu facturación desde el primer día.</p>
+            <div class="pricing-grid" style="margin-bottom: 100px;">
+                <!-- Pack 1 -->
+                <div class="price-card fade-up">
+                    <h3 data-i18n="pack1_name">Lanzamiento Base</h3>
+                    <div class="price">
+                        <span class="currency">$</span><span class="amount">250</span><span class="period">USD</span>
+                    </div>
+                    <ul class="price-features">
+                        <li data-i18n="pack1_f1">Landing Page Alta Conversión</li>
+                        <li data-i18n="pack1_f2">Setup Inicial de Redes Sociales</li>
+                        <li data-i18n="pack1_f3">Sesión: Fotos de Producto (Básico)</li>
+                        <li data-i18n="pack1_f4">Ahorro del 15% vs Individual</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-secondary w-100" data-i18n="price_btn">Seleccionar Pack</a>
+                </div>
+
+                <!-- Pack 2 -->
+                <div class="price-card featured fade-up" style="transition-delay: 0.1s; border: 2px solid var(--accent-red); box-shadow: 0 0 20px rgba(230, 57, 70, 0.3);">
+                    <div class="badge" data-i18n="price_badge_pack" style="background: var(--accent-red);">Más Elegido</div>
+                    <h3 data-i18n="pack2_name">Despegue Digital</h3>
+                    <div class="price">
+                        <span class="currency">$</span><span class="amount">450</span><span class="period">USD</span>
+                    </div>
+                    <ul class="price-features">
+                        <li data-i18n="pack2_f1">Web Corporativa (Hasta 4 pág)</li>
+                        <li data-i18n="pack2_f2">Gestión de Redes (1 Mes)</li>
+                        <li data-i18n="pack2_f3">Producción 3 Reels / TikToks</li>
+                        <li data-i18n="pack2_f4">Ahorro del 25% vs Individual</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary w-100" data-i18n="price_btn">Seleccionar Pack</a>
+                </div>
+
+                <!-- Pack 3 -->
+                <div class="price-card fade-up" style="transition-delay: 0.2s;">
+                    <h3 data-i18n="pack3_name">Dominio Total</h3>
+                    <div class="price">
+                        <span class="currency">$</span><span class="amount">750</span><span class="period">USD</span>
+                    </div>
+                    <ul class="price-features">
+                        <li data-i18n="pack3_f1">Tienda Online / E-Commerce</li>
+                        <li data-i18n="pack3_f2">Estrategia de Meta Ads + CM</li>
+                        <li data-i18n="pack3_f3">Producción Audiovisual Premium</li>
+                        <li data-i18n="pack3_f4">Automatización IA Integrada</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-secondary w-100" data-i18n="price_btn">Seleccionar Pack</a>
+                </div>
+            </div>
+
+            <!-- Existing Services Layout -->
+            <div style="text-align: center; margin-bottom: 40px;" class="fade-up">
+                <hr style="border-color: var(--border-light); margin-bottom: 40px;">
+                <h3 style="color: var(--text-muted); font-weight: 300; letter-spacing: 2px;">O CONTRATA SERVICIOS ESPECÍFICOS:</h3>
+            </div>
+
+            <h3 class="fade-up" style="text-align: center; margin-bottom: 40px; color: var(--accent-red); font-size: 2rem;">Desarrollo Web</h3>
+            <div class="pricing-grid" style="margin-bottom: 80px;">
+                <!-- Plan Web 1 -->
+                <div class="price-card fade-up">
+                    <h3 data-i18n="p_web1_name">Sitio One-Page</h3>
+                    <div class="price">
+                        <span class="currency">$</span><span class="amount">60</span><span class="period">USD</span>
+                        <div class="ars-price" data-i18n="p_web1_ars">~ $72.000 ARS</div>
+                    </div>
+                    <ul class="price-features">
+                        <li data-i18n="p_web1_f1">Landing Page (1 sección larga)</li>
+                        <li data-i18n="p_web1_f2">Diseño 100% Móvil</li>
+                        <li data-i18n="p_web1_f3">Botones a Redes y WhatsApp</li>
+                        <li data-i18n="p_web1_f4">Entrega en 5 días</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-secondary w-100" data-i18n="price_btn">Seleccionar Plan</a>
+                </div>
+
+                <!-- Plan Web 2 -->
+                <div class="price-card featured fade-up" style="transition-delay: 0.1s;">
+                    <div class="badge" data-i18n="price_badge">Recomendado</div>
+                    <h3 data-i18n="p_web2_name">Web Profesional</h3>
+                    <div class="price">
+                        <span class="currency">$</span><span class="amount">120</span><span class="period">USD</span>
+                        <div class="ars-price" data-i18n="p_web2_ars">~ $144.000 ARS</div>
+                    </div>
+                    <ul class="price-features">
+                        <li data-i18n="p_web2_f1">Sitio Web (Hasta 4 páginas)</li>
+                        <li data-i18n="p_web2_f2">Formulario de Contacto</li>
+                        <li data-i18n="p_web2_f3">Optimización SEO Básico</li>
+                        <li data-i18n="p_web2_f4">Dominio y Hosting (Asesoría)</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary w-100" data-i18n="price_btn">Seleccionar Plan</a>
+                </div>
+
+                <!-- Plan Web 3 -->
+                <div class="price-card fade-up" style="transition-delay: 0.2s;">
+                    <h3 data-i18n="p_web3_name">Web Premium / Tienda</h3>
+                    <div class="price">
+                        <span class="currency">$</span><span class="amount">250</span><span class="period">USD</span>
+                        <div class="ars-price" data-i18n="p_web3_ars">~ $300.000 ARS</div>
+                    </div>
+                    <ul class="price-features">
+                        <li data-i18n="p_web3_f1">Sitio Avanzado o E-commerce Básico</li>
+                        <li data-i18n="p_web3_f2">Panel Autogestionable</li>
+                        <li data-i18n="p_web3_f3">Integración de Pagos y Envíos</li>
+                        <li data-i18n="p_web3_f4">1 Mes de Soporte Gratis</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-secondary w-100" data-i18n="price_btn">Seleccionar Plan</a>
+                </div>
+            </div>
+
+            <h3 class="fade-up" style="text-align: center; margin-bottom: 40px; color: var(--accent-red); font-size: 2rem;">Community Management</h3>
+            <div class="pricing-grid">
+                <!-- Plan CM 1 -->
+                <div class="price-card fade-up">
+                    <h3 data-i18n="p_cm1_name">Presencia</h3>
+                    <div class="price">
+                        <span class="currency">$</span><span class="amount">70</span><span class="period">USD/mes</span>
+                        <div class="ars-price" data-i18n="p_cm1_ars">~ $84.000 ARS /mes</div>
+                    </div>
+                    <ul class="price-features">
+                        <li data-i18n="p_cm1_f1">2 Posts Semanales (Flyer/Carrusel)</li>
+                        <li data-i18n="p_cm1_f2">4 Historias Semanales</li>
+                        <li data-i18n="p_cm1_f3">Respuestas Básicas a Mensajes</li>
+                        <li data-i18n="p_cm1_f4">Organización de Feed</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-secondary w-100" data-i18n="price_btn">Seleccionar Plan</a>
+                </div>
+
+                <!-- Plan CM 2 -->
+                <div class="price-card featured fade-up" style="transition-delay: 0.1s;">
+                    <div class="badge" data-i18n="price_badge_cm">Escala</div>
+                    <h3 data-i18n="p_cm2_name">Crecimiento (Reels)</h3>
+                    <div class="price">
+                        <span class="currency">$</span><span class="amount">130</span><span class="period">USD/mes</span>
+                        <div class="ars-price" data-i18n="p_cm2_ars">~ $156.000 ARS /mes</div>
+                    </div>
+                    <ul class="price-features">
+                        <li data-i18n="p_cm2_f1">3 Posts (Incluye 1 Reel Editado)</li>
+                        <li data-i18n="p_cm2_f2">8 Historias Dinámicas</li>
+                        <li data-i18n="p_cm2_f3">Interacción con la Comunidad</li>
+                        <li data-i18n="p_cm2_f4">Reporte Mensual Básico</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary w-100" data-i18n="price_btn">Seleccionar Plan</a>
+                </div>
+
+                <!-- Plan CM 3 -->
+                <div class="price-card fade-up" style="transition-delay: 0.2s;">
+                    <h3 data-i18n="p_cm3_name">Estrategia Total + Ads</h3>
+                    <div class="price">
+                        <span class="currency">$</span><span class="amount">220</span><span class="period">USD/mes</span>
+                        <div class="ars-price" data-i18n="p_cm3_ars">~ $264.000 ARS /mes</div>
+                    </div>
+                    <ul class="price-features">
+                        <li data-i18n="p_cm3_f1">4-5 Posts (Mayoría Reels/Video)</li>
+                        <li data-i18n="p_cm3_f2">Historias Diarias y Copy Persuasivo</li>
+                        <li data-i18n="p_cm3_f3">Gestión de Pautas (Meta Ads)*</li>
+                        <li data-i18n="p_cm3_f4">Planificación Estratégica Completa</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-secondary w-100" data-i18n="price_btn">Seleccionar Plan</a>
+                </div>
+            </div>
+            <p style="text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 15px;">*El presupuesto de inversión en Meta Ads no está incluido.</p>
+        </div>
+    </section>
+
+    <!-- Mini Services Section -->
+    <section id="mini-services" class="mini-services section" style="background-color: var(--bg-dark); position: relative; overflow: hidden;">
+        <!-- Decorative background elements -->
+        <div style="position: absolute; top: 0; left: 20%; width: 300px; height: 300px; background: var(--accent-red); border-radius: 50%; filter: blur(150px); opacity: 0.1;"></div>
+        
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2 data-i18n="mini_title">Servicios Individuales</h2>
+                <p data-i18n="mini_subtitle">Soluciones rápidas y de alto impacto para potenciar áreas específicas de tu negocio.</p>
+            </div>
+
+            <div class="mini-grid">
+                <!-- Mini Service 1 -->
+                <div class="mini-card-premium fade-up">
+                    <div class="mini-img" style="background-image: url('assets/mini_video_edit_1772816300653.png');">
+                        <div class="mini-badge">🎬 Edición</div>
+                    </div>
+                    <div class="mini-content">
+                        <h4 data-i18n="mini1_title">Edición de Video Formato Corto (Reels/TikTok)</h4>
+                        <p data-i18n="mini1_desc">Edición dinámica con subtítulos animados, transiciones fluidas, SFX y retención visual máxima.</p>
+                        <hr class="mini-divider">
+                        <div class="mini-footer">
+                            <span class="mini-price-tag" data-i18n="mini1_price">Desde $15 <span>USD / video</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mini Service 2 -->
+                <div class="mini-card-premium fade-up" style="transition-delay: 0.1s;">
+                    <div class="mini-img" style="background-image: url('assets/mini_flyer_design_1772816316888.png');">
+                        <div class="mini-badge">🎨 Diseño</div>
+                    </div>
+                    <div class="mini-content">
+                        <h4 data-i18n="mini2_title">Flyers y Piezas Gráficas Publicitarias</h4>
+                        <p data-i18n="mini2_desc">Diseño gráfico de alto impacto visual para anuncios pagados, promociones y eventos especiales.</p>
+                        <hr class="mini-divider">
+                        <div class="mini-footer">
+                            <span class="mini-price-tag" data-i18n="mini2_price">Desde $10 <span>USD / pieza</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mini Service 3 -->
+                <div class="mini-card-premium fade-up" style="transition-delay: 0.2s;">
+                    <div class="mini-img" style="background-image: url('assets/mini_ai_models_1772816332868.png');">
+                        <div class="mini-badge">🤖 IA</div>
+                    </div>
+                    <div class="mini-content">
+                        <h4 data-i18n="mini3_title">Creación de Modelos e Imágenes con IA</h4>
+                        <p data-i18n="mini3_desc">Generación de imágenes fotorrealistas con Midjourney, y clonación/creación de voces en Off con IA.</p>
+                        <hr class="mini-divider">
+                        <div class="mini-footer">
+                            <span class="mini-price-tag" data-i18n="mini3_price">Desde $20 <span>USD / pack</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mini Service 4 -->
+                <div class="mini-card-premium fade-up" style="transition-delay: 0.3s;">
+                    <div class="mini-img" style="background-image: url('assets/mini_copywriting_1772816357030.png');">
+                        <div class="mini-badge">✍️ Copy</div>
+                    </div>
+                    <div class="mini-content">
+                        <h4 data-i18n="mini4_title">Copywriting Persuasivo y Guiones</h4>
+                        <p data-i18n="mini4_desc">Redacción estratégica de guiones para videos magnéticos o secuencias de email marketing que venden.</p>
+                        <hr class="mini-divider">
+                        <div class="mini-footer">
+                            <span class="mini-price-tag" data-i18n="mini4_price">Desde $12 <span>USD / texto</span></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mini Service 5 -->
+                <div class="mini-card-premium fade-up" style="transition-delay: 0.1s;">
+                    <div class="mini-img" style="background-image: url('assets/mini_ux_audit_1772816373013.png');">
+                        <div class="mini-badge">🔎 Auditoría UI/UX</div>
+                    </div>
+                    <div class="mini-content">
+                        <h4 data-i18n="mini5_title">Auditoría de tu Sitio / Landing Page</h4>
+                        <p data-i18n="mini5_desc">Revisión exhaustiva de tu web actual para encontrar cuellos de botella y mejorar la conversión y velocidad de carga.</p>
+                        <hr class="mini-divider">
+                        <div class="mini-footer">
+                            <span class="mini-price-tag" data-i18n="mini5_price">Desde $30 <span>USD / reporte</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mini Service 6 -->
+                <div class="mini-card-premium fade-up" style="transition-delay: 0.2s;">
+                    <div class="mini-img" style="background-image: url('assets/mini_consulting_1772816392772.png');">
+                        <div class="mini-badge">💻 Consultoría</div>
+                    </div>
+                    <div class="mini-content">
+                        <h4 data-i18n="mini6_title">Asesoría Tecnológica (1 a 1)</h4>
+                        <p data-i18n="mini6_desc">Llamada de 60 minutos para definir la estrategia de tu próximo proyecto, stack técnico o embudo de ventas digital.</p>
+                        <hr class="mini-divider">
+                        <div class="mini-footer">
+                            <span class="mini-price-tag" data-i18n="mini6_price">Desde $25 <span>USD / hora</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mini-cta fade-up">
+                <p>¿Necesitas una combinación específica o trabajo por horas?</p>
+                <a href="#contact" class="btn btn-secondary" data-i18n="mini_btn">Consultar Presupuesto Personalizado</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq section">
+        <div class="container faq-container">
+            <div class="section-header fade-up">
+                <h2 data-i18n="faq_title">Preguntas Frecuentes</h2>
+                <p data-i18n="faq_subtitle">Resolvemos tus dudas antes de empezar.</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item fade-up">
+                    <div class="faq-question">
+                        <h4 data-i18n="faq_q1">¿Cuánto tiempo tarda un proyecto promedio?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-i18n="faq_a1">Depende de la complejidad, pero una Landing Page completa y optimizada
+                            suele demorar entre 7 y 14 días desde la etapa de diseño hasta el lanzamiento.</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-up" style="transition-delay: 0.1s;">
+                    <div class="faq-question">
+                        <h4 data-i18n="faq_q2">¿Ofreces mantenimiento después del desarrollo?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-i18n="faq_a2">Sí, ofrezco planes de mantenimiento mensual que incluyen actualizaciones
+                            de contenido, monitoreo de seguridad y mejoras continuas de SEO.</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-up" style="transition-delay: 0.2s;">
+                    <div class="faq-question">
+                        <h4 data-i18n="faq_q3">¿Trabajas con clientes fuera de Argentina?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-i18n="faq_a3">¡Absolutamente! Gran parte de mis clientes son internacionales. La
+                            comunicación es 100% remota y asíncrona, adaptándome a tu zona horaria.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section id="contact" class="cta-section fade-up">
+        <div class="container cta-container">
+            <h2 data-i18n="cta_title">¿Listo para transformar tu proyecto?</h2>
+            <p data-i18n="cta_subtitle">Hablemos de tus metas comerciales y de cómo la tecnología exacta puede ayudarte
+                a alcanzarlas.</p>
+            <div class="cta-actions">
+                <a href="https://wa.me/5493548632095" target="_blank" class="btn btn-primary btn-large"
+                    data-i18n="cta_btn">Hablemos por WhatsApp</a>
+                <a href="https://www.linkedin.com/in/hernan-francini-a75032231/" target="_blank"
+                    class="btn btn-secondary btn-large">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo">H.FRANCINI<span class="dot">.</span></a>
+                <p data-i18n="footer_location">Córdoba, Argentina.</p>
+            </div>
+            <div class="footer-legal">
+                <p data-i18n="footer_rights">© 2026 Hernán Francini. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5493548632095" class="whatsapp-float fade-in" target="_blank" aria-label="WhatsApp"
+        style="transition-delay: 1s;">
+        <svg viewBox="0 0 32 32" width="36" height="36" fill="white">
+            <path
+                d="M16 2a13 13 0 0 0-11 20l-2 6 6.2-2a13 13 0 1 0 6.8-24zm0 24a10.8 10.8 0 0 1-5.6-1.5l-3.8 1.2 1.2-3.6A11 11 0 1 1 16 26zm6-8.2c-.3-.2-2-.9-2.3-1-.3-.1-.5-.2-.7.2-.2.3-.9 1-1.1 1.2-.2.3-.4.3-.7.1-.4-.2-1.4-.5-2.6-1.6-1-1-1.3-1.3-1.5-1.7-.2-.3 0-.5.2-.6.2-.1.3-.3.5-.5.2-.2.2-.3.3-.6.1-.2 0-.4-.1-.6-.1-.2-.9-2.2-1.2-3-.3-.8-.7-.7-1-.7h-.8c-.3 0-.8.1-1.2.5-.4.4-1.5 1.4-1.5 3.5s1.6 4 1.8 4.3c.2.3 3 4.5 7.2 6.3 1 .4 1.8.7 2.4.8.9.3 1.8.3 2.5.1s2-.8 2.3-1.6.3-1.6.2-1.8c-.1-.1-.3-.3-.6-.5z" />
+        </svg>
+    </a>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

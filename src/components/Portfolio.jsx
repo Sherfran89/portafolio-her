@@ -58,7 +58,7 @@ export default function Portfolio({ t, lang }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            {['all', 'dev', 'social', 'extra'].map((cat) => (
+            {['all', 'dev', 'social', 'infografias', 'extra'].map((cat) => (
               <motion.button 
                 key={cat}
                 whileHover={{ scale: 1.05 }}
@@ -89,7 +89,16 @@ export default function Portfolio({ t, lang }) {
                   exit="exit"
                   whileHover={{ y: -10, boxShadow: '0 20px 40px rgba(0,0,0,0.3)' }}
                 >
-                  <div className="port-img" style={{ backgroundImage: `url('${proj.image}')` }}>
+                  <div 
+                    className="port-img" 
+                    style={{ 
+                      backgroundImage: `url('${proj.image}')`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center'
+                    }}
+                    role="img"
+                    aria-label={proj.title[lang]}
+                  >
                     <div className="port-overlay">
                       {proj.link === 'gallery' ? (
                         <motion.button

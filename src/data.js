@@ -23,6 +23,7 @@ export const translations = {
       filter_all: "Todos",
       filter_dev: "Web / Código",
       filter_social: "Social Media Manager",
+      filter_infografias: "Infografías",
       filter_extra: "Proyectos Extras",
       port_view: "Visitar Proyecto",
       value_title: "¿Por qué un <span>generalista experto</span> es tu mejor inversión?",
@@ -82,6 +83,7 @@ export const translations = {
       filter_all: "All",
       filter_dev: "Web / Code",
       filter_social: "Social Media Manager",
+      filter_infografias: "Infographics",
       filter_extra: "Extra Projects",
       port_view: "Visit Project",
       value_title: "Why an <span>expert generalist</span> is your best investment?",
@@ -237,10 +239,16 @@ export const projects = [
   // Social Media Manager Projects
   {
     category: "social",
-    image: "/assets/mockup_logos.png",
+    image: "/assets/logos/crea_8_logotipos_202603180039.jpeg",
     link: "gallery",
     galleryImages: [
-      "/assets/mockup_social_media.png",
+      "/assets/logos/Eight_professional_business_202603180026.jpeg",
+      "/assets/logos/crea_8_logotipos_202603180038.jpeg",
+      "/assets/logos/crea_8_logotipos_202603180039 (1).jpeg",
+      "/assets/logos/crea_8_logotipos_202603180039 (2).jpeg",
+      "/assets/logos/crea_8_logotipos_202603180039.jpeg",
+      "/assets/logos/crea_8_logotipos_202603180043 (1).jpeg",
+      "/assets/logos/crea_8_logotipos_202603180043.jpeg",
     ],
     title: { es: "Diseño de Logos", en: "Logo Design" },
     desc: { es: "Creación de identidad visual y logotipos profesionales para marcas y emprendimientos.", en: "Professional logo and visual identity creation for brands and businesses." }
@@ -260,78 +268,68 @@ export const projects = [
   },
   {
     category: "social",
-    image: "/assets/mockup_publicidades.png",
+    image: "/assets/modelos/Woman_fitness_collage_202603172112.jpeg",
     link: "gallery",
     galleryImages: [
-      "/assets/mockup_publicidades.png",
-      "/assets/mini_consulting_1772816392772.png",
-      "/assets/mini_copywriting_1772816357030.png",
+      "/assets/modelos/Man_smoking_in_cafe_f8eb074a8a.jpeg",
+      "/assets/modelos/Person_with_tattoos_holding_face_44ce9e2086.jpeg",
+      "/assets/modelos/Woman_fitness_collage_202603172112.jpeg",
+      "/assets/modelos/Woman_in_black_202603171820.jpeg",
+      "/assets/modelos/Woman_in_black_202603171935.jpeg",
+      "/assets/modelos/Woman_smiling_in_202603172111.jpeg",
+      "/assets/modelos/Young_adult_sitting_loading_dock_a0fa1fde0e.jpeg",
     ],
     title: { es: "Fotos de Modelos", en: "Model Photos" },
     desc: { es: "Fotografía y dirección de arte para modelos, lookbooks y campañas de moda con enfoque editorial.", en: "Photography and art direction for models, lookbooks, and fashion campaigns with editorial focus." }
   },
   {
     category: "social",
-    image: "/assets/mockup_feed.png",
+    image: "/assets/productos/Cosmetic_bottle_floating_202603171755.jpeg",
     link: "gallery",
     galleryImages: [
-      "/assets/mockup_feed.png",
-      "/assets/mini_ux_audit_1772816373013.png",
-      "/assets/mockup_social_media.png",
+      "/assets/productos/Cocktail_with_fresh_202603171806.jpeg",
+      "/assets/productos/Cosmetic_bottle_floating_202603171755.jpeg",
+      "/assets/productos/Cosmetic_bottle_floating_202603171756.jpeg",
+      "/assets/productos/Cosmetic_cream_jar_202603171759.jpeg",
+      "/assets/productos/Fernet_con_Coca_202603171806.jpeg",
+      "/assets/productos/Lip_gloss_splash_202603171804.jpeg",
+      "/assets/productos/Miniature_skiers_on_202603172114.jpeg",
+      "/assets/productos/Niña_sonriendo_sosteniendo_202603172019.jpeg",
+      "/assets/productos/Strawberry_energy_drink_202603171822.jpeg",
+      "/assets/productos/Woman_holding_pineapple_202603171801.jpeg",
     ],
     title: { es: "Fotos de Productos", en: "Product Photos" },
     desc: { es: "Fotografía de producto con foco en composición, iluminación y edición para e-commerce y catálogos.", en: "Product photography focused on composition, lighting, and editing for e-commerce and catalogs." }
   },
   {
     category: "social",
-    image: "/assets/mockup_stories.png",
+    image: "/assets/lifestyle/Woman_sitting_at_202603171818.jpeg",
     link: "gallery",
     galleryImages: [
-      "/assets/mockup_stories.png",
-      "/assets/mini_ai_models_1772816332868.png",
-      "/assets/mockup_publicidades.png",
-    ],
-    title: { es: "Publicidades / Ads", en: "Advertisements / Ads" },
-    desc: { es: "Creatividades publicitarias optimizadas para Meta Ads, Instagram y Facebook con foco en conversión.", en: "Ad creatives optimized for Meta Ads, Instagram, and Facebook with a focus on conversion." }
-  },
-  {
-    category: "social",
-    image: "/assets/social_branding_1.jpg",
-    link: "gallery",
-    galleryImages: [
-      "/assets/social_branding_1.jpg",
-      "/assets/social_branding_2.jpg",
-      "/assets/social_branding_3.jpg",
-      "/assets/mini_flyer_design_1772816316888.png",
-    ],
-    title: { es: "Branding Completo", en: "Full Branding" },
-    desc: { es: "Desarrollo integral de marca: naming, paleta, tipografías, manual de identidad y aplicaciones.", en: "Comprehensive brand development: naming, palette, typography, identity manual and applications." }
-  },
-  {
-    category: "social",
-    image: "/assets/photo_prof_1.jpg",
-    link: "gallery",
-    galleryImages: [
-      "/assets/photo_prof_1.jpg",
-      "/assets/photo_prof_2.jpg",
-      "/assets/photo_prof_3.jpg",
-      "/assets/photo_prof_4.jpg",
-    ],
-    title: { es: "Fotografía Editorial", en: "Editorial Photography" },
-    desc: { es: "Sesiones fotográficas de alta calidad con enfoque en dirección de arte, iluminación de estudio y post-producción profesional.", en: "High-quality photo shoots with a focus on art direction, studio lighting, and professional post-production." }
-  },
-  {
-    category: "social",
-    image: "/assets/photo_lifestyle_1.jpg",
-    link: "gallery",
-    galleryImages: [
-      "/assets/photo_lifestyle_1.jpg",
-      "/assets/photo_lifestyle_2.jpg",
-      "/assets/photo_lifestyle_3.jpg",
-      "/assets/photo_lifestyle_4.jpg",
+      "/assets/lifestyle/Person_seated_on_patio_chair_2c902329dc.jpeg",
+      "/assets/lifestyle/Singer_in_recording_202603172109.jpeg",
+      "/assets/lifestyle/Woman_in_red_dress_clutch_99fdccbf5d.jpeg",
+      "/assets/lifestyle/Woman_in_red_dress_clutch_cd596023da.jpeg",
+      "/assets/lifestyle/Woman_sitting_at_202603171818.jpeg",
+      "/assets/lifestyle/Woman_taking_mirror_202603172137.jpeg",
     ],
     title: { es: "Lifestyle & iPhone", en: "Lifestyle & iPhone" },
     desc: { es: "Captura de momentos auténticos y contenido estético 'casual' optimizado para redes sociales utilizando dispositivos móviles de alta gama.", en: "Capture of authentic moments and 'casual' aesthetic content optimized for social media using high-end mobile devices." }
+  },
+  {
+    category: "infografias",
+    image: "/assets/infografias/Infografía_tipos_de_202603172212.jpeg",
+    link: "gallery",
+    galleryImages: [
+      "/assets/infografias/Calendario_2026_Hello_202603172302.jpeg",
+      "/assets/infografias/Calendario_2026_Hello_202603172303.jpeg",
+      "/assets/infografias/Gemini_Generated_Image_a3m6a8a3m6a8a3m6.png",
+      "/assets/infografias/Gemini_Generated_Image_ldmgztldmgztldmg.png",
+      "/assets/infografias/Infografia_sobre_Halloween_202603172306.jpeg",
+      "/assets/infografias/Infografía_tipos_de_202603172212.jpeg",
+    ],
+    title: { es: "Infografías", en: "Infographics" },
+    desc: { es: "Diseño de infografías informativas, calendarios y piezas visuales educativas para redes sociales.", en: "Design of informative infographics, calendars, and educational visual pieces for social media." }
   },
   // Extra - Music, Voice, Video
   {

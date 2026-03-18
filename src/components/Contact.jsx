@@ -72,7 +72,7 @@ export default function Contact({ t, lang }) {
             </div>
           </motion.div>
 
-          {/* EmailJS Form */}
+            {/* EmailJS Form */}
           <motion.form 
             ref={form} 
             onSubmit={sendEmail} 
@@ -83,43 +83,73 @@ export default function Contact({ t, lang }) {
             style={{ 
               background: 'var(--bg-card)', 
               padding: '30px', 
-              borderRadius: 'var(--radius)', 
+              borderRadius: 'var(--radius-md)', 
               border: '1px solid var(--border-light)',
-              boxShadow: '0 10px 30px rgba(0,0,0,0.1)' 
+              boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
+              backdropFilter: 'blur(20px)'
             }}
           >
-            <h3 style={{ marginBottom: '20px', fontSize: '1.5rem', textAlign: 'center' }}>
-              {lang === 'es' ? '📋 Solicitar Cotización' : '📋 Request a Quote'}
+            <h3 style={{ marginBottom: '25px', fontSize: '1.6rem', textAlign: 'center', color: 'var(--text-main)' }}>
+              {lang === 'es' ? '🚀 Solicitar Cotización' : '🚀 Request a Quote'}
             </h3>
             
             <div style={{ marginBottom: '15px' }}>
-              <label style={{ display: 'block', marginBottom: '8px', color: 'var(--text-muted)' }}>{lang === 'es' ? 'Nombre' : 'Name'}</label>
-              <input type="text" name="user_name" required style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid var(--border-light)', background: 'var(--bg-dark)', color: 'var(--text-light)', fontFamily: 'inherit' }} />
+              <label style={{ display: 'block', marginBottom: '8px', color: 'var(--text-muted)', fontWeight: '500' }}>{lang === 'es' ? 'Nombre Completo' : 'Full Name'}</label>
+              <input type="text" name="user_name" placeholder={lang === 'es' ? 'Tu nombre...' : 'Your name...'} required style={{ width: '100%', padding: '14px', borderRadius: '8px', border: '1px solid var(--border-light)', background: 'rgba(255,255,255,0.05)', color: 'var(--text-main)', fontFamily: 'inherit', outline: 'none' }} />
             </div>
             
             <div style={{ marginBottom: '15px' }}>
-              <label style={{ display: 'block', marginBottom: '8px', color: 'var(--text-muted)' }}>Email</label>
-              <input type="email" name="user_email" required style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid var(--border-light)', background: 'var(--bg-dark)', color: 'var(--text-light)', fontFamily: 'inherit' }} />
+              <label style={{ display: 'block', marginBottom: '8px', color: 'var(--text-muted)', fontWeight: '500' }}>Email</label>
+              <input type="email" name="user_email" placeholder="email@ejemplo.com" required style={{ width: '100%', padding: '14px', borderRadius: '8px', border: '1px solid var(--border-light)', background: 'rgba(255,255,255,0.05)', color: 'var(--text-main)', fontFamily: 'inherit', outline: 'none' }} />
             </div>
             
-            <div style={{ marginBottom: '20px' }}>
-              <label style={{ display: 'block', marginBottom: '8px', color: 'var(--text-muted)' }}>{lang === 'es' ? 'Mensaje/Proyecto' : 'Message/Project'}</label>
-              <textarea name="message" rows="4" required style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid var(--border-light)', background: 'var(--bg-dark)', color: 'var(--text-light)', fontFamily: 'inherit', resize: 'vertical' }} />
+            <div style={{ marginBottom: '25px' }}>
+              <label style={{ display: 'block', marginBottom: '8px', color: 'var(--text-muted)', fontWeight: '500' }}>{lang === 'es' ? 'Cuéntame sobre tu proyecto' : 'Tell me about your project'}</label>
+              <textarea name="message" rows="4" placeholder={lang === 'es' ? '¿En qué puedo ayudarte?' : 'How can I help you?'} required style={{ width: '100%', padding: '14px', borderRadius: '8px', border: '1px solid var(--border-light)', background: 'rgba(255,255,255,0.05)', color: 'var(--text-main)', fontFamily: 'inherit', resize: 'none', outline: 'none' }} />
             </div>
 
             <motion.button 
               type="submit" 
-              className="btn btn-secondary" 
-              style={{ width: '100%', padding: '15px', border: 'none', cursor: 'pointer' }}
+              className={`btn ${status === 'sending' ? 'btn-secondary' : 'btn-primary'}`} 
+              style={{ width: '100%', padding: '16px', borderRadius: '8px', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '10px' }}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               disabled={status === 'sending'}
             >
-              {status === 'sending' ? (lang === 'es' ? 'Enviando...' : 'Sending...') : (lang === 'es' ? 'Enviar Mensaje' : 'Send Message')}
+              {status === 'sending' ? (
+                <>
+                  <span className="loader-mini"></span>
+                  {lang === 'es' ? 'Enviando...' : 'Sending...'}
+                </>
+              ) : (
+                lang === 'es' ? '🚀 Enviar Cotización' : '🚀 Send Quote Request'
+              )}
             </motion.button>
             
-            {status === 'success' && <p style={{ color: '#4ade80', marginTop: '15px', textAlign: 'center' }}>{lang === 'es' ? '¡Mensaje enviado con éxito!' : 'Message sent successfully!'}</p>}
-            {status === 'error' && <p style={{ color: 'var(--accent-red)', marginTop: '15px', textAlign: 'center' }}>{lang === 'es' ? 'Hubo un error. Intenta por WhatsApp.' : 'Error sending. Try WhatsApp.'}</p>}
+            {status === 'success' && (
+              <motion.p 
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                style={{ color: '#4ade80', marginTop: '20px', textAlign: 'center', fontWeight: 'bold' }}
+              >
+                {lang === 'es' ? '✅ ¡Mensaje enviado! Te responderé pronto.' : '✅ Message sent! I will reply soon.'}
+              </motion.p>
+            )}
+            
+            {status === 'error' && (
+              <motion.p 
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                style={{ color: 'var(--accent-red)', marginTop: '20px', textAlign: 'center', fontWeight: 'bold' }}
+              >
+                {lang === 'es' ? '❌ Error. Por favor usa WhatsApp.' : '❌ Error. Please use WhatsApp instead.'}
+              </motion.p>
+            )}
+
+            {/* Config Note for the User */}
+            <p style={{ fontSize: '0.7rem', color: 'var(--text-muted)', textAlign: 'center', marginTop: '15px', opacity: 0.5 }}>
+              Ref: EmailJS integration. Needs Service/Template ID & Public Key.
+            </p>
 
           </motion.form>
         </div>

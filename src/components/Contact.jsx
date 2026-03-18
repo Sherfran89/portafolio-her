@@ -11,7 +11,7 @@ export default function Contact({ t, lang }) {
     setStatus('sending');
 
     // Make sure user sets these in their EmailJS account later
-    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
+    emailjs.sendForm('service_6cbjcir', 'template_1gweasj', form.current, 'c-nzcguDaEbg19jQ2')
       .then((result) => {
           setStatus('success');
           form.current.reset();
@@ -146,10 +146,7 @@ export default function Contact({ t, lang }) {
               </motion.p>
             )}
 
-            {/* Config Note for the User */}
-            <p style={{ fontSize: '0.7rem', color: 'var(--text-muted)', textAlign: 'center', marginTop: '15px', opacity: 0.5 }}>
-              Ref: EmailJS integration. Needs Service/Template ID & Public Key.
-            </p>
+
 
           </motion.form>
         </div>

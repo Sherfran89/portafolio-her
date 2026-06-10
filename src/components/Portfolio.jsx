@@ -1,35 +1,34 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ExternalLink } from 'lucide-react';
 import { projects } from '../data';
 import GalleryModal from './GalleryModal';
+import LazyImage from './LazyImage';
+import styles from './Portfolio.module.css';
 
 export default function Portfolio({ t, lang }) {
   const [filter, setFilter] = useState('all');
-  const [gallery, setGallery] = useState(null); // { images, title }
+  const [gallery, setGallery] = useState(null); // { images, videos, title }
 
-  const filteredProjects = projects.filter(p => filter === 'all' || p.category === filter);
+  const categories = [
+    { id: 'all', label: t.filter_all },
+    { id: 'dev', label: t.filter_dev },
+    { id: 'social', label: t.filter_social },
+    { id: 'media', label: t.filter_media },
+    { id: 'utilities', label: t.filter_utilities }
+  ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: { 
-      opacity: 1,
-      transition: { staggerChildren: 0.1 }
-    }
-  };
+  const filteredProjects = filter === 'all' ? projects : projects.filter(p => p.category === filter);
 
-  const itemVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: { opacity: 1, scale: 1, transition: { type: 'spring', damping: 20 } },
-    exit: { opacity: 0, scale: 0.8, transition: { duration: 0.2 } }
-  };
-
-  const handleCardAction = (proj) => {
+  const handleCardClick = (proj) => {
     if (proj.link === 'gallery') {
       setGallery({ 
         images: proj.galleryImages || [], 
         videos: proj.youtubeIds || [],
         title: proj.title[lang] 
       });
+    } else if (proj.link && proj.link !== '#') {
+      window.open(proj.link, '_blank', 'noopener,noreferrer');
     }
   };
 
@@ -40,7 +39,7 @@ export default function Portfolio({ t, lang }) {
 
   return (
     <>
-      <section id="portfolio" className="portfolio section">
+      <section id="portfolio" className="section">
         <div className="container">
           <motion.div 
             className="section-header"
@@ -48,84 +47,72 @@ export default function Portfolio({ t, lang }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
+            <p className="subtitle">{t.port_subtitle}</p>
             <h2>{t.port_title}</h2>
-            <p>{t.port_subtitle}</p>
           </motion.div>
 
-          <motion.div 
-            className="portfolio-filters"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            {['all', 'dev', 'social', 'infografias', 'extra'].map((cat) => (
-              <motion.button 
-                key={cat}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className={`filter-btn ${filter === cat ? 'active' : ''}`} 
-                onClick={() => setFilter(cat)}
+          <div className={styles.portfolioFilters}>
+            {categories.map(cat => (
+              <button
+                key={cat.id}
+                onClick={() => setFilter(cat.id)}
+                className={`${styles.filterBtn} ${filter === cat.id ? styles.active : ''}`}
               >
-                {t[`filter_${cat}`]}
-              </motion.button>
+                {cat.label}
+              </button>
             ))}
-          </motion.div>
+          </div>
 
-          <motion.div 
-            className="portfolio-grid"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
+          <motion.div layout className={styles.portfolioGrid}>
             <AnimatePresence mode="popLayout">
               {filteredProjects.map((proj, idx) => (
-                <motion.div 
-                  key={proj.title[lang] + idx} 
-                  className="port-card" 
+                <motion.div
                   layout
-                  variants={itemVariants}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
-                  whileHover={{ y: -10, boxShadow: '0 20px 40px rgba(0,0,0,0.3)' }}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.4 }}
+                  key={proj.title[lang] + idx}
+                  className={styles.portCard}
+                  onClick={() => handleCardClick(proj)}
                 >
-                  <div 
-                    className="port-img" 
-                    style={{ 
-                      backgroundImage: `url('${proj.image}')`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center'
-                    }}
-                    role="img"
-                    aria-label={proj.title[lang]}
-                  >
-                    <div className="port-overlay">
+                  <div className={styles.portImg}>
+                    <LazyImage 
+                      src={proj.image} 
+                      alt={proj.title[lang]} 
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    />
+                    <div className={styles.portOverlay} onClick={(e) => e.stopPropagation()}>
                       {proj.link === 'gallery' ? (
-                        <motion.button
-                          className="btn btn-primary"
-                          whileHover={{ scale: 1.1 }}
-                          onClick={() => handleCardAction(proj)}
-                        >
-                          {getButtonLabel(proj)}
-                        </motion.button>
+                        <div className={styles.overlayInner}>
+                          <span className={styles.mediaCount}>
+                            {proj.galleryImages ? `${proj.galleryImages.length} ${lang === 'es' ? 'Fotos' : 'Photos'}` : ''}
+                            {proj.youtubeIds ? `${proj.youtubeIds.length} ${lang === 'es' ? 'Videos' : 'Videos'}` : ''}
+                          </span>
+                          <button 
+                            className="btn btn-primary"
+                            onClick={() => handleCardClick(proj)}
+                          >
+                            {getButtonLabel(proj)}
+                          </button>
+                        </div>
                       ) : proj.link && proj.link !== '#' ? (
-                        <motion.a 
+                        <a 
                           href={proj.link} 
                           target="_blank" 
-                          rel="noreferrer" 
+                          rel="noopener noreferrer" 
                           className="btn btn-primary"
-                          whileHover={{ scale: 1.1 }}
                         >
-                          {t.port_view}
-                        </motion.a>
+                          {t.port_view} <ExternalLink size={16} />
+                        </a>
                       ) : (
-                        <motion.span className="btn btn-primary btn-disabled" whileHover={{ scale: 1.05 }}>
+                        <span className="btn btn-primary btn-disabled">
                           {lang === 'es' ? 'Próximamente' : 'Coming Soon'}
-                        </motion.span>
+                        </span>
                       )}
                     </div>
                   </div>
-                  <div className="port-info">
+                  <div className={styles.portInfo}>
                     <h3>{proj.title[lang]}</h3>
                     <p>{proj.desc[lang]}</p>
                   </div>

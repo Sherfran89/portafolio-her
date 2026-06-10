@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react';
+import LazyImage from './LazyImage';
 
 export default function GalleryModal({ images = [], videos = [], title, onClose }) {
   const items = useMemo(() => [
@@ -122,12 +123,11 @@ export default function GalleryModal({ images = [], videos = [], title, onClose 
                 allowFullScreen
               />
             ) : (
-              <img
+              <LazyImage
                 src={items[current].src}
                 alt={`${title} - imagen ${current + 1}`}
                 className="gallery-img"
-                draggable={false}
-                loading="eager"
+                style={{ width: '100%', height: '100%', objectFit: 'contain' }}
               />
             )}
           </div>

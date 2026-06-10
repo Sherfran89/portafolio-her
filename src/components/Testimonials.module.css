@@ -1,0 +1,181 @@
+.headerFlex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.filters {
+  display: flex;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-light);
+  padding: 6px;
+  border-radius: 30px;
+}
+
+.filterBtn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: var(--transition);
+}
+
+.filterBtn:hover,
+.filterBtn.active {
+  background: var(--accent-primary);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+.navButtons {
+  display: flex;
+  gap: 12px;
+}
+
+.navBtn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  color: var(--text-main);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition);
+}
+
+.navBtn:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  transform: scale(1.05);
+}
+
+.carouselContainer {
+  position: relative;
+  width: 100%;
+}
+
+.carouselViewport {
+  overflow: hidden;
+  cursor: grab;
+  width: 100%;
+}
+
+.innerCarousel {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+  padding: 10px 0;
+}
+
+.testimonialCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  width: 400px;
+  flex-shrink: 0;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 280px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonialCard:hover {
+  border-color: rgba(139, 92, 246, 0.2);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.testContent {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.quoteIcon {
+  font-size: 6rem;
+  color: var(--accent-primary);
+  opacity: 0.15;
+  position: absolute;
+  top: -40px;
+  left: -10px;
+  line-height: 1;
+  font-family: serif;
+}
+
+.quote {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  position: relative;
+  z-index: 1;
+}
+
+.testAuthor {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.authorAvatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.authorInfo h4 {
+  font-size: 1.05rem;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.authorInfo span {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  .headerFlex {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .testimonialCard {
+    width: 290px;
+    padding: 30px;
+    min-height: 320px;
+  }
+  .navButtons {
+    display: none; /* Hide scroll buttons on mobile, swipe is enough */
+  }
+}

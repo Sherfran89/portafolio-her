@@ -1,70 +1,78 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Code2, Megaphone, Bot, ArrowRight } from 'lucide-react';
+import styles from './Services.module.css';
 
-export default function Services({ t }) {
+export default function Services({ t, lang }) {
+  const services = [
+    {
+      id: 1,
+      icon: <Code2 size={32} />,
+      title: t.serv1_title,
+      desc: t.serv1_desc
+    },
+    {
+      id: 2,
+      icon: <Megaphone size={32} />,
+      title: t.serv2_title,
+      desc: t.serv2_desc
+    },
+    {
+      id: 3,
+      icon: <Bot size={32} />,
+      title: t.serv3_title,
+      desc: t.serv3_desc
+    }
+  ];
+
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { 
-      opacity: 1,
-      transition: { staggerChildren: 0.2 }
-    }
+    visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { type: 'spring', damping: 20, stiffness: 100 } }
-  };
-
-  const cardHover = {
-    scale: 1.03,
-    transition: { type: 'spring', stiffness: 300, damping: 20 }
+  const cardVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
   };
 
   return (
-    <section id="services" className="services section">
+    <section id="servicios" className="section">
       <div className="container">
         <motion.div 
           className="section-header"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={itemVariants}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
         >
+          <p className="subtitle">{t.services_subtitle}</p>
           <h2>{t.services_title}</h2>
-          <p>{t.services_subtitle}</p>
         </motion.div>
-
+        
         <motion.div 
-          className="services-grid"
+          className={styles.servicesGrid}
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
+          viewport={{ once: true, amount: 0.2 }}
         >
-          <motion.div className="service-card" variants={itemVariants} whileHover={cardHover}>
-            <div className="card-icon">
-              <img src="/assets/icon_frontend.png" alt="Desarrollo Web" />
-            </div>
-            <h3>{t.serv1_title}</h3>
-            <p>{t.serv1_desc}</p>
-          </motion.div>
-
-          <motion.div className="service-card" variants={itemVariants} whileHover={cardHover}>
-            <div className="card-icon">
-              <img src="/assets/icon_marketing.png" alt="Estrategia Digital" />
-            </div>
-            <h3>{t.serv2_title}</h3>
-            <p>{t.serv2_desc}</p>
-          </motion.div>
-
-          <motion.div className="service-card" variants={itemVariants} whileHover={cardHover}>
-            <div className="card-icon">
-              <img src="/assets/icon_ai.png" alt="Inteligencia Artificial" />
-            </div>
-            <h3>{t.serv3_title}</h3>
-            <p>{t.serv3_desc}</p>
-          </motion.div>
-
+          {services.map((service) => (
+            <motion.div 
+              key={service.id} 
+              className={styles.serviceCard}
+              variants={cardVariants}
+              whileHover={{ scale: 1.02 }}
+            >
+              <div className={styles.cardIcon}>
+                {service.icon}
+              </div>
+              <h3>{service.title}</h3>
+              <p>{service.desc}</p>
+              <a href="#contacto" className={styles.learnMoreBtn}>
+                {lang === 'es' ? 'Saber más' : 'Learn more'} <ArrowRight size={16} />
+              </a>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </section>

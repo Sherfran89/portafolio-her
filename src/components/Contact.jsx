@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
-import { Mail, MapPin, Send, Instagram, Linkedin, Github, Facebook } from 'lucide-react';
+import { Mail, MapPin, Send, Instagram, Linkedin, Github, Facebook, Copy, Check } from 'lucide-react';
 import styles from './Contact.module.css';
 
 export default function Contact({ t, lang }) {
@@ -12,6 +12,13 @@ export default function Contact({ t, lang }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
   const [shake, setShake] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText('hernanfrancini89@gmail.com');
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   const validate = (name, value) => {
     let err = '';
@@ -106,8 +113,9 @@ export default function Contact({ t, lang }) {
   };
 
   return (
-    <section id="contacto" className="section">
-      <div className="container">
+    <section id="contacto" className="section" style={{ background: 'var(--bg-card)', position: 'relative' }}>
+      
+      <div className="container" style={{ marginTop: '80px' }}>
         <motion.div 
           className="section-header"
           initial={{ opacity: 0, y: 30 }}
@@ -135,7 +143,25 @@ export default function Contact({ t, lang }) {
                 </div>
                 <div className={styles.infoContent}>
                   <h4>Email</h4>
-                  <p>hernanfrancini89@gmail.com</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <p style={{ marginBottom: 0 }}>hernanfrancini89@gmail.com</p>
+                    <button 
+                      onClick={handleCopy}
+                      title="Copiar email"
+                      style={{ 
+                        background: 'transparent', 
+                        border: 'none', 
+                        color: copied ? '#22c55e' : 'var(--text-muted)', 
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        padding: '4px'
+                      }}
+                    >
+                      {copied ? <Check size={16} /> : <Copy size={16} />}
+                    </button>
+                  </div>
                 </div>
               </div>
               <div className={styles.infoItem}>

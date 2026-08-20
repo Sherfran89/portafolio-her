@@ -2,14 +2,14 @@
    VARIABLES & SETUP (Premium Dark Theme)
    ========================================= */
 :root {
-  /* Light mode defaults */
+  /* Premium Light Theme */
   --bg-main: #f8fafc;
   --bg-card: rgba(255, 255, 255, 0.8);
   --bg-card-hover: rgba(255, 255, 255, 1);
-  --accent-primary: #8b5cf6; 
-  --accent-secondary: #ec4899; 
+  --accent-primary: #4f46e5; /* Indigo slightly darker */
+  --accent-secondary: #9333ea; /* Purple slightly darker */
   --text-main: #0f172a;
-  --text-muted: #64748b;
+  --text-muted: #475569;
   --border-light: rgba(0, 0, 0, 0.08);
 
   --font-body: 'Outfit', sans-serif;
@@ -21,10 +21,13 @@
   --radius-lg: 24px;
 }
 
-html.dark {
+.dark {
+  /* Premium Dark Theme */
   --bg-main: #0a0a0f;
   --bg-card: rgba(20, 20, 25, 0.6);
   --bg-card-hover: rgba(30, 30, 40, 0.8);
+  --accent-primary: #6366f1; /* Indigo */
+  --accent-secondary: #a855f7; /* Purple */
   --text-main: #f8fafc;
   --text-muted: #94a3b8;
   --border-light: rgba(255, 255, 255, 0.08);

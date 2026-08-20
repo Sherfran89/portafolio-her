@@ -70,6 +70,28 @@
   box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
 }
 
+.cvFloat {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+  z-index: 1000;
+  transition: var(--transition);
+  color: white;
+}
+
+.cvFloat:hover {
+  transform: scale(1.1);
+  box-shadow: 0 15px 40px rgba(139, 92, 246, 0.6);
+}
+
 .footer {
   border-top: 1px solid var(--border-light);
   padding: 40px 0;

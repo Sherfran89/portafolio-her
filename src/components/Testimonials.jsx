@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Linkedin } from 'lucide-react';
 import styles from './Testimonials.module.css';
 
 export default function Testimonials({ t, lang }) {
@@ -106,7 +106,22 @@ export default function Testimonials({ t, lang }) {
                   <div className={styles.testAuthor}>
                     <div className={styles.authorAvatar}>{test.a}</div>
                     <div className={styles.authorInfo}>
-                      <h4>{test.name}</h4>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <h4>{test.name}</h4>
+                        <a 
+                          href="#" 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          title="Ver perfil de LinkedIn"
+                          style={{ color: '#0077b5', display: 'flex', alignItems: 'center' }}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            alert(lang === 'es' ? 'Enlace a LinkedIn próximamente.' : 'LinkedIn link coming soon.');
+                          }}
+                        >
+                          <Linkedin size={16} />
+                        </a>
+                      </div>
                       <span>{test.role}</span>
                     </div>
                   </div>

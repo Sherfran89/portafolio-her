@@ -13,16 +13,10 @@ export default function Hero({ t }) {
   return (
     <section id="inicio" className={styles.hero}>
       <div className={styles.heroBg}>
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline 
-          style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.3, pointerEvents: 'none' }}
-        >
-          {/* Default placeholder cinematic coding video */}
-          <source src="https://cdn.pixabay.com/video/2021/08/04/83861-584758925_large.mp4" type="video/mp4" />
-        </video>
+        <div className={styles.blob1}></div>
+        <div className={styles.blob2}></div>
+        <div className={styles.blob3}></div>
+        <div className={styles.glassOverlay}></div>
       </div>
       <div className={`container ${styles.heroContainer}`}>
         
@@ -73,10 +67,13 @@ export default function Hero({ t }) {
           <div className={styles.imageWrapper}>
             <div className={styles.glowRing}></div>
             <img 
-              src="/assets/profile_photo.png" 
+              src="/assets/profile_photo.webp" 
               alt="Hernán Francini" 
               className={styles.profileImage}
+              width="450"
+              height="562"
               loading="eager"
+              fetchpriority="high"
             />
           </div>
         </motion.div>

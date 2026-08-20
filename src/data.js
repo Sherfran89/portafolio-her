@@ -7,8 +7,8 @@ export const translations = {
       nav_about: "Sobre Mí",
       nav_contact: "Hablemos",
       hero_subtitle: "Full-Stack Digital Strategist ✨",
-      hero_title: "Diseño experiencias digitales que <span>elevan tu marca</span> y atraen clientes reales.",
-      hero_desc: "Desarrollo web estratégico y gestión de comunidades para posicionarte como líder en tu sector.",
+      hero_title: "Desarrollo web y estrategia digital que <span>convierten usuarios en clientes.</span>",
+      hero_desc: "Soy Frontend Developer & Community Manager. Combino código limpio con estrategias de marketing para crear productos digitales que no solo se ven bien, sino que generan resultados.",
       hero_cta: "Iniciar mi Proyecto",
       hero_sec_cta: "Descubrir mis servicios",
       services_title: "Mis Servicios",
@@ -25,7 +25,16 @@ export const translations = {
       filter_dev: "Web / Código",
       filter_social: "Social Media & Diseño",
       filter_media: "Multimedia (Video & Audio)",
-      filter_utilities: "Mini-Apps & Práctica",
+      workflow_title: "Mi Proceso de Trabajo",
+      workflow_subtitle: "Metodología probada para transformar tu visión en resultados comerciales.",
+      workflow_s1_title: "1. Descubrimiento y Estrategia",
+      workflow_s1_desc: "Entiendo a fondo tu modelo de negocio, tus clientes ideales y tus objetivos comerciales para definir una hoja de ruta clara.",
+      workflow_s2_title: "2. Diseño UI/UX",
+      workflow_s2_desc: "Creo prototipos interactivos centrados en la retención del usuario, garantizando que tu producto sea intuitivo y atractivo.",
+      workflow_s3_title: "3. Desarrollo Técnico",
+      workflow_s3_desc: "Escribo código limpio, rápido y escalable. Construyo plataformas robustas con las últimas tecnologías web para máxima velocidad.",
+      workflow_s4_title: "4. Lanzamiento y Crecimiento",
+      workflow_s4_desc: "Despliego tu producto y ejecuto estrategias de marketing para asegurar que empiece a generar ventas e interacciones desde el día 1.",
       port_view: "Visitar Proyecto",
       value_title: "¿Por qué un <span>desarrollador y estratega integral</span> es tu mejor inversión?",
       value_desc1: "El problema de contratar múltiples agencias o freelancers por separado es la falta de comunicación. El diseñador no entiende de código, y el programador no sabe de marketing. Eso agota tu presupuesto y retrasa lanzamientos.",
@@ -47,8 +56,8 @@ export const translations = {
       test6_quote: '"Tercer proyecto que lanzo junto a él y siempre supera mis expectativas. El código es impecable y entiende perfectamente cómo vender un producto."',
       test6_role: "Vanguardia Growth",
       about_title: "Un poco más sobre mí",
-      about_p1: "Hola, soy Hernán Francini, profesional radicado en Córdoba, Argentina. Mi pasión siempre ha sido encontrar el punto exacto donde la creatividad visual choca con la lógica técnica perfecta.",
-      about_p2: "Tras años de perfeccionarme tanto en el desarrollo de software (Frontend) como en la comunicación digital (Community Management, Copywriting, Edición de Video), he construido un perfil único preparado para afrontar desafíos digitales de extremo a extremo.",
+      about_p1: "Hola, soy Hernán Francini, profesional radicado en Córdoba, Argentina. Mi mayor ventaja competitiva es que hablo dos idiomas: el técnico (código) y el comercial (marketing).",
+      about_p2: "Como Frontend Developer y Community Manager, no solo construyo sitios web rápidos y modernos con React, sino que entiendo cómo estructurarlos para retener usuarios, generar leads y potenciar marcas en redes sociales. Cierro la brecha entre el desarrollo técnico y la estrategia de negocio.",
       about_highlight: "Mi misión es simple: asegurarme de que mi cliente gane más de lo que invierte en mí.",
       about_cv_dev: "CV Desarrollador Frontend",
       about_cv_cm: "CV Community Manager & Marketing",
@@ -123,7 +132,16 @@ export const translations = {
       filter_dev: "Web / Code",
       filter_social: "Social Media & Design",
       filter_media: "Multimedia (Video & Audio)",
-      filter_utilities: "Mini-Apps & Practice",
+      workflow_title: "My Workflow",
+      workflow_subtitle: "Proven methodology to transform your vision into commercial results.",
+      workflow_s1_title: "1. Discovery & Strategy",
+      workflow_s1_desc: "I deeply understand your business model, your ideal clients, and your commercial goals to define a clear roadmap.",
+      workflow_s2_title: "2. UI/UX Design",
+      workflow_s2_desc: "I create interactive prototypes focused on user retention, ensuring your product is intuitive and visually appealing.",
+      workflow_s3_title: "3. Technical Development",
+      workflow_s3_desc: "I write clean, fast, and scalable code. Building robust platforms with the latest web technologies for maximum speed.",
+      workflow_s4_title: "4. Launch & Growth",
+      workflow_s4_desc: "I deploy your product and execute marketing strategies to ensure it starts generating sales and interactions from day 1.",
       port_view: "Visit Project",
       value_title: "Why a <span>full-stack developer & strategist</span> is your best investment?",
       value_desc1: "The problem with hiring multiple separate agencies or freelancers is the lack of alignment. The designer doesn't understand code, and the developer doesn't know marketing. That drains your budget and delays launches.",
@@ -198,119 +216,125 @@ export const translations = {
 };
 
 export const projects = [
-  // Web / Code Projects
   {
     category: "dev",
-    image: "/assets/mockup_pixelstudio.png",
-    link: "https://pixelstudiocba.netlify.app",
-    title: { es: "Pixel Studio", en: "Pixel Studio" },
-    desc: { es: "Landing Page premium para estudio creativo con animaciones y dark mode.", en: "Premium Landing Page for creative studio with animations and dark mode." }
-  },
-  {
-    category: "dev",
-    image: "/assets/mockup_astroweb.png",
-    link: "https://astrologiaweb.netlify.app",
-    title: { es: "Astrología Web", en: "Astrology Web" },
-    desc: { es: "Plataforma interactiva de astrología y lectura de tarot.", en: "Interactive astrology and tarot reading platform." }
+    github: "https://github.com/Sherfran89/nexus-ai",
+    image: "/assets/mockup_nexus_ai.png",
+    link: "https://github.com/Sherfran89/nexus-ai",
+    title: { es: "Nexus AI Content Gen", en: "Nexus AI Content Gen" },
+    desc: { es: "Aplicación web para generación inteligente de contenidos de marketing digital con IA (Google Gemini), optimización multi-plataforma y almacenamiento local seguro.", en: "AI-powered marketing content generation web app (Google Gemini) with multi-platform optimization and secure local storage." }
   },
   {
     category: "dev",
-    image: "/assets/mockup_eternia.png",
-    link: "https://eterniaonline.netlify.app",
-    title: { es: "Eternia Online", en: "Eternia Online" },
-    desc: { es: "Sitio web profesional para videojuego MMORPG.", en: "Professional website for an MMORPG video game." }
+    github: "https://github.com/Sherfran89/ecommerce-headless-pro",
+    image: "/assets/mockup_ecommerce_headless.png",
+    link: "https://github.com/Sherfran89/ecommerce-headless-pro",
+    title: { es: "E-Commerce Headless Pro", en: "E-Commerce Headless Pro" },
+    desc: { es: "Plataforma de comercio electrónico de alto rendimiento con arquitectura Headless, Next.js 15, React 19, Zustand, integración con Stripe y Tailwind CSS v4.", en: "High-performance Headless e-commerce platform built with Next.js 15, React 19, Zustand, Stripe integration, and Tailwind CSS v4." }
   },
   {
     category: "dev",
-    image: "/assets/mockup_xeneize.png",
-    link: "https://xeneizehub.netlify.app",
-    title: { es: "Xeneize Hub", en: "Xeneize Hub" },
-    desc: { es: "Dashboard estadístico interactivo de Boca Juniors.", en: "Interactive statistical dashboard for Boca Juniors." }
+    github: "https://github.com/Sherfran89/realtime-productivity-board",
+    image: "/assets/mockup_productivity_board.png",
+    link: "https://github.com/Sherfran89/realtime-productivity-board",
+    title: { es: "Productivity Board", en: "Productivity Board" },
+    desc: { es: "Tablero de gestión de tareas interactivo estilo Trello/Notion con Drag & Drop avanzado (@dnd-kit), indexación fraccional y estado optimista con Zustand.", en: "Interactive Trello/Notion-style task board with advanced Drag & Drop (@dnd-kit), fractional indexing, and optimistic UI with Zustand." }
   },
   {
     category: "dev",
-    image: "/assets/mockup_pelisreco.png",
-    link: "https://pelis-reco.netlify.app",
-    title: { es: "Pelis Reco", en: "Pelis Reco" },
-    desc: { es: "Aplicación de recomendación de películas.", en: "Movie recommendation application." }
+    github: "https://github.com/Sherfran89/dashboard-financiero",
+    image: "/assets/mockup_dashboard_financiero.png",
+    link: "https://github.com/Sherfran89/dashboard-financiero",
+    title: { es: "Dashboard Financiero", en: "Financial Dashboard" },
+    desc: { es: "Panel analítico y financiero interactivo con métricas en tiempo real, gráficos dinámicos con Recharts y gestión de estado global con Zustand.", en: "Interactive financial and analytics dashboard featuring real-time metrics, dynamic charts with Recharts, and Zustand state management." }
   },
   {
     category: "dev",
-    image: "/assets/mockup_compraloYa.png",
-    link: "https://compraloya-shop.netlify.app",
-    title: { es: "CompraloYa Shop", en: "CompraloYa Shop" },
-    desc: { es: "Tienda online de e-commerce moderna.", en: "Modern online e-commerce store." }
+    github: "https://github.com/Sherfran89/Mario-Game",
+    image: "/assets/mockup_mario.png",
+    link: "https://sherfran89.github.io/Mario-Game/",
+    title: { es: "Mario Game", en: "Mario Game" },
+    desc: { es: "Juego clásico interactivo de Mario Bros desarrollado con HTML5, animaciones CSS y JavaScript para detección de colisiones y manipulación del DOM.", en: "Classic interactive Mario Bros game developed with HTML5, CSS animations, and JavaScript collision detection and DOM manipulation." }
   },
   {
     category: "dev",
-    image: "/assets/mockup_aurum.png",
-    link: "https://aurum-estetica.netlify.app",
-    title: { es: "Aurum Estética", en: "Aurum Esthetics" },
-    desc: { es: "Landing page elegante para centro de estética.", en: "Elegant landing page for an esthetics center." }
-  },
-  {
-    category: "dev",
-    image: "/assets/mockup_titan.png",
-    link: "https://titan-forge.netlify.app",
-    title: { es: "Titan Forge", en: "Titan Forge" },
-    desc: { es: "Sitio web para gimnasio o aplicación de fitness.", en: "Website for gym or fitness application." }
-  },
-  {
-    category: "dev",
-    image: "/assets/mockup_atelier.png",
-    link: "https://atelierisabella.netlify.app",
-    title: { es: "Atelier Isabella", en: "Atelier Isabella" },
-    desc: { es: "Portafolio digital para atelier creativo.", en: "Digital portfolio for a creative atelier." }
-  },
-  // Extra Projects
-  {
-    category: "utilities",
-    image: "/assets/mockup_resolucion.png",
-    link: "https://capturador-de-miniatura.blogspot.com/2024/04/cambiador-de-resolucion.html",
-    title: { es: "Cambiador de Resolución", en: "Resolution Changer" },
-    desc: { es: "Herramienta web para cambiar resolución de imágenes.", en: "Web tool to change image resolutions." }
-  },
-  {
-    category: "utilities",
-    image: "/assets/mockup_miniaturas.png",
-    link: "https://capturador-de-miniatura.blogspot.com/2024/04/captura-y-descarga-imagenes-de.html",
-    title: { es: "Capturador de Miniaturas", en: "Thumbnail Catcher" },
-    desc: { es: "Herramienta para descargar miniaturas de YouTube.", en: "Tool to download YouTube thumbnails." }
-  },
-  {
-    category: "utilities",
-    image: "/assets/mockup_password.png",
-    link: "https://sherfran89.github.io/password-generator/",
-    title: { es: "Generador de Contraseñas", en: "Password Generator" },
-    desc: { es: "Utilidad segura para crear contraseñas fuertes.", en: "Secure utility to create strong passwords." }
-  },
-  {
-    category: "utilities",
+    github: "https://github.com/Sherfran89/calculator",
     image: "/assets/mockup_calculadora.png",
     link: "https://sherfran89.github.io/calculator/",
     title: { es: "Calculadora Web", en: "Web Calculator" },
-    desc: { es: "Calculadora funcional con diseño moderno.", en: "Functional calculator with modern design." }
+    desc: { es: "Calculadora interactiva con diseño responsive, operaciones matemáticas encadenadas y estética moderna en CSS3 y JavaScript.", en: "Interactive responsive web calculator with chained mathematical operations and modern CSS3 and JavaScript UI." }
   },
   {
-    category: "utilities",
-    image: "/assets/mockup_encriptador.png",
-    link: "https://sherfran89.github.io/encriptador-de-mesajes/",
-    title: { es: "Encriptador de Mensajes", en: "Message Encryptor" },
-    desc: { es: "Aplicación para cifrar y descifrar textos.", en: "Application to encrypt and decrypt texts." }
+    category: "dev",
+    github: "#",
+    image: "/assets/mockup_pixelstudio.png",
+    link: "https://pixelstudiocba.netlify.app",
+    title: { es: "Pixel Studio", en: "Pixel Studio" },
+    desc: { es: "Landing Page de alta conversión para estudio creativo. Optimizada para cargar en menos de 1 segundo (React + Framer Motion).", en: "High-converting Landing Page for a creative studio. Optimized for sub-second load times (React + Framer Motion)." }
   },
   {
-    category: "utilities",
-    image: "/assets/mockup_quiz.png",
-    link: "https://sherfran89.github.io/Quiz-Game/",
-    title: { es: "Juego de Preguntas", en: "Quiz Game" },
-    desc: { es: "Divertido juego de preguntas interactivo.", en: "Fun interactive quiz game." }
+    category: "dev",
+    github: "#",
+    image: "/assets/mockup_astroweb.png",
+    link: "https://astrologiaweb.netlify.app",
+    title: { es: "Astrología Web", en: "Astrology Web" },
+    desc: { es: "Plataforma SaaS interactiva con procesamiento de datos en tiempo real. Interfaz dinámica diseñada para maximizar la retención de usuarios.", en: "Interactive SaaS platform with real-time data processing. Dynamic interface designed to maximize user retention." }
   },
   {
-    category: "utilities",
-    image: "/assets/mockup_mario.png",
-    link: "https://sherfran89.github.io/Mario-Game/",
-    title: { es: "Juego Estilo Mario", en: "Mario Style Game" },
-    desc: { es: "Minijuego web basado en clásicos de plataformas.", en: "Web minigame based on platformer classics." }
+    category: "dev",
+    github: "#",
+    image: "/assets/mockup_eternia.png",
+    link: "https://eterniaonline.netlify.app",
+    title: { es: "Eternia Online", en: "Eternia Online" },
+    desc: { es: "Sitio corporativo inmersivo enfocado en captación de leads y comunidad. Maquetación semántica con métricas perfectas de SEO.", en: "Immersive corporate site focused on lead generation and community. Semantic layout with perfect SEO metrics." }
+  },
+  {
+    category: "dev",
+    github: "#",
+    image: "/assets/mockup_xeneize.png",
+    link: "https://xeneizehub.netlify.app",
+    title: { es: "Xeneize Hub", en: "Xeneize Hub" },
+    desc: { es: "Dashboard analítico B2B para visualización de datos estadísticos complejos mediante una interfaz intuitiva y responsive.", en: "B2B analytical dashboard for complex statistical data visualization through an intuitive and responsive interface." }
+  },
+  {
+    category: "dev",
+    github: "#",
+    image: "/assets/mockup_pelisreco.png",
+    link: "https://pelis-reco.netlify.app",
+    title: { es: "Pelis Reco", en: "Pelis Reco" },
+    desc: { es: "Aplicación de consumo de APIs a gran escala con búsquedas asíncronas y arquitectura frontend escalable.", en: "Large-scale API consumption application with asynchronous searches and scalable frontend architecture." }
+  },
+  {
+    category: "dev",
+    github: "#",
+    image: "/assets/mockup_compraloYa.png",
+    link: "https://compraloya-shop.netlify.app",
+    title: { es: "CompraloYa Shop", en: "CompraloYa Shop" },
+    desc: { es: "Solución de E-Commerce completa enfocada en reducir el abandono de carrito con una experiencia de checkout fluida.", en: "Complete E-commerce solution focused on reducing cart abandonment with a seamless checkout experience." }
+  },
+  {
+    category: "dev",
+    github: "#",
+    image: "/assets/mockup_aurum.png",
+    link: "https://aurum-estetica.netlify.app",
+    title: { es: "Aurum Estética", en: "Aurum Esthetics" },
+    desc: { es: "Embudo de ventas digital para centro de estética, diseñado estratégicamente para agendar citas y capturar datos de clientes.", en: "Digital sales funnel for an esthetics center, strategically designed to book appointments and capture client data." }
+  },
+  {
+    category: "dev",
+    github: "#",
+    image: "/assets/mockup_titan.png",
+    link: "https://titan-forge.netlify.app",
+    title: { es: "Titan Forge", en: "Titan Forge" },
+    desc: { es: "Portal web de membresías para gimnasio, optimizado para móvil y enfocado en la adquisición rápida de nuevos socios.", en: "Membership web portal for a gym, mobile-optimized and focused on rapid new member acquisition." }
+  },
+  {
+    category: "dev",
+    github: "#",
+    image: "/assets/mockup_atelier.png",
+    link: "https://atelierisabella.netlify.app",
+    title: { es: "Atelier Isabella", en: "Atelier Isabella" },
+    desc: { es: "Portafolio premium y vitrina digital, utilizando estética minimalista para destacar servicios de alto valor.", en: "Premium portfolio and digital showcase, using minimalist aesthetics to highlight high-value services." }
   },
   // Social Media Manager Projects
   {

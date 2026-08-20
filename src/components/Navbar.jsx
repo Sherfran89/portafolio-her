@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { Sun, Moon } from 'lucide-react';
 import { useTheme } from './ThemeProvider';
+
 import styles from './Navbar.module.css';
 
 export default function Navbar({ t, lang, toggleLang }) {
-  const { isDark, toggleTheme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('inicio');
+  const { isDark, toggleTheme } = useTheme();
 
   // Scroll Progress logic
   const { scrollYProgress } = useScroll();
@@ -118,7 +119,12 @@ export default function Navbar({ t, lang, toggleLang }) {
           </div>
 
           <div className={styles.navActions}>
-            <button className={styles.themeSwitch} onClick={toggleTheme} aria-label="Toggle theme" style={{ background: 'transparent', border: 'none', color: 'var(--text-main)', cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
+            <button 
+              className={styles.themeToggle} 
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+              style={{ background: 'transparent', border: 'none', color: 'var(--text-main)', cursor: 'pointer', display: 'flex', alignItems: 'center' }}
+            >
               {isDark ? <Sun size={20} /> : <Moon size={20} />}
             </button>
             <button className={styles.langSwitch} onClick={toggleLang}>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
 import { projects } from '../data';
 import GalleryModal from './GalleryModal';
 import LazyImage from './LazyImage';
@@ -8,14 +8,13 @@ import styles from './Portfolio.module.css';
 
 export default function Portfolio({ t, lang }) {
   const [filter, setFilter] = useState('all');
-  const [gallery, setGallery] = useState(null); // { images, videos, title }
+  const [gallery, setGallery] = useState(null);
 
   const categories = [
     { id: 'all', label: t.filter_all },
     { id: 'dev', label: t.filter_dev },
     { id: 'social', label: t.filter_social },
-    { id: 'media', label: t.filter_media },
-    { id: 'utilities', label: t.filter_utilities }
+    { id: 'media', label: t.filter_media }
   ];
 
   const filteredProjects = filter === 'all' ? projects : projects.filter(p => p.category === filter);
@@ -33,8 +32,17 @@ export default function Portfolio({ t, lang }) {
   };
 
   const getButtonLabel = (proj) => {
-    if (proj.link === 'gallery') return lang === 'es' ? 'Ver Trabajos' : 'View Work';
+    if (proj.link === 'gallery') return lang === 'es' ? 'Ver Galería' : 'View Gallery';
     return t.port_view;
+  };
+
+  const getCategoryTag = (cat) => {
+    switch (cat) {
+      case 'dev': return 'Web App';
+      case 'social': return 'Design & Social';
+      case 'media': return 'Multimedia';
+      default: return 'Project';
+    }
   };
 
   return (
@@ -43,7 +51,7 @@ export default function Portfolio({ t, lang }) {
         <div className="container">
           <motion.div 
             className="section-header"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
@@ -63,16 +71,15 @@ export default function Portfolio({ t, lang }) {
             ))}
           </div>
 
-          <motion.div layout className={styles.portfolioGrid}>
+          <div className={styles.portfolioGrid}>
             <AnimatePresence mode="popLayout">
               {filteredProjects.map((proj, idx) => (
                 <motion.div
-                  layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.4 }}
                   key={proj.title[lang] + idx}
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.3 }}
                   className={styles.portCard}
                   onClick={() => handleCardClick(proj)}
                 >
@@ -97,14 +104,35 @@ export default function Portfolio({ t, lang }) {
                           </button>
                         </div>
                       ) : proj.link && proj.link !== '#' ? (
-                        <a 
-                          href={proj.link} 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
-                          className="btn btn-primary"
-                        >
-                          {t.port_view} <ExternalLink size={16} />
-                        </a>
+                        <div style={{ display: 'flex', gap: '10px' }}>
+                          <a 
+                            href={proj.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="btn btn-primary"
+                            style={{ padding: '8px 16px', fontSize: '0.9rem' }}
+                          >
+                            <ExternalLink size={16} /> {t.port_view}
+                          </a>
+                          {proj.category === 'dev' && (
+                            <a 
+                              href={proj.github || '#'} 
+                              target={proj.github && proj.github !== '#' ? "_blank" : "_self"}
+                              rel="noopener noreferrer"
+                              title="Ver código en GitHub"
+                              className="btn btn-primary"
+                              style={{ padding: '8px', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)' }}
+                              onClick={(e) => {
+                                if (!proj.github || proj.github === '#') {
+                                  e.preventDefault();
+                                  alert(lang === 'es' ? 'Repositorio de GitHub próximamente.' : 'GitHub repository coming soon.');
+                                }
+                              }}
+                            >
+                              <Github size={18} />
+                            </a>
+                          )}
+                        </div>
                       ) : (
                         <span className="btn btn-primary btn-disabled">
                           {lang === 'es' ? 'Próximamente' : 'Coming Soon'}
@@ -113,13 +141,18 @@ export default function Portfolio({ t, lang }) {
                     </div>
                   </div>
                   <div className={styles.portInfo}>
-                    <h3>{proj.title[lang]}</h3>
-                    <p>{proj.desc[lang]}</p>
+                    <div>
+                      <h3>{proj.title[lang]}</h3>
+                      <p>{proj.desc[lang]}</p>
+                    </div>
+                    <div className={styles.tags}>
+                      <span className={styles.tag}>{getCategoryTag(proj.category)}</span>
+                    </div>
                   </div>
                 </motion.div>
               ))}
             </AnimatePresence>
-          </motion.div>
+          </div>
         </div>
       </section>
 

@@ -65,22 +65,98 @@ export default function About({ t, lang }) {
         </motion.div>
 
         <motion.div 
-          className={styles.aboutVisual}
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          className={styles.timelineWrapper}
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <div className={styles.visualElements}>
-            <div className={styles.circle1}></div>
-            <div className={styles.circle2}></div>
-          </div>
-          <div className={styles.experienceBadge}>
-            <span className={styles.years}>+5</span>
-            <span className={styles.text}>{lang === 'es' ? 'Años de Experiencia' : 'Years of Experience'}</span>
+          <h3 className={styles.timelineHeader}>
+            {lang === 'es' ? 'Trayectoria Profesional' : 'Career Timeline'}
+          </h3>
+
+          <div className={styles.timelineList}>
+            <div className={styles.timelineItem}>
+              <div className={styles.timelineDot} />
+              <div className={styles.timelineLine} />
+              <div className={styles.timelineBody}>
+                <span className={styles.timelineDate}>Nov 2024 — {lang === 'es' ? 'Abr' : 'Apr'} 2025</span>
+                <h4>{lang === 'es' ? 'Desarrollador Web & Community Manager' : 'Web Developer & Community Manager'}</h4>
+                <span style={{ fontSize: '0.85rem', color: 'var(--accent-primary)', display: 'block', marginBottom: '6px' }}>Estudio Jurídico & La Bitácora Viajera</span>
+                <p>{lang === 'es' ? 'Desarrollo integral de plataforma web responsiva, optimización UX e implementación de herramientas IA para gestión de contenidos.' : 'Full web platform development, UX optimization, and implementation of AI tools for content management.'}</p>
+              </div>
+            </div>
+
+            <div className={styles.timelineItem}>
+              <div className={styles.timelineDot} />
+              <div className={styles.timelineLine} />
+              <div className={styles.timelineBody}>
+                <span className={styles.timelineDate}>{lang === 'es' ? 'Ene' : 'Jan'} 2024 — {lang === 'es' ? 'Abr' : 'Apr'} 2024</span>
+                <h4>Community Manager</h4>
+                <span style={{ fontSize: '0.85rem', color: 'var(--accent-primary)', display: 'block', marginBottom: '6px' }}>Femmina Lab</span>
+                <p>{lang === 'es' ? 'Estrategia de contenidos en redes sociales, consistencia estética y análisis de métricas clave para campañas.' : 'Social media content strategy, visual consistency, and key metrics analysis for campaigns.'}</p>
+              </div>
+            </div>
+
+            <div className={styles.timelineItem}>
+              <div className={styles.timelineDot} />
+              <div className={styles.timelineLine} />
+              <div className={styles.timelineBody}>
+                <span className={styles.timelineDate}>Feb 2023 — Jun 2023</span>
+                <h4>{lang === 'es' ? 'Desarrollador Web' : 'Web Developer'} (WordPress)</h4>
+                <span style={{ fontSize: '0.85rem', color: 'var(--accent-primary)', display: 'block', marginBottom: '6px' }}>Centro de Yoga</span>
+                <p>{lang === 'es' ? 'Reestructuración completa de plataforma web, corrección de errores de código (bug fixing) y optimización de rendimiento.' : 'Complete web platform restructure, bug fixing, and performance optimization.'}</p>
+              </div>
+            </div>
+
+            <div className={styles.timelineItem}>
+              <div className={styles.timelineDot} />
+              <div className={styles.timelineBody}>
+                <span className={styles.timelineDate}>Jun 2022 — Dic 2022</span>
+                <h4>Community Manager</h4>
+                <span style={{ fontSize: '0.85rem', color: 'var(--accent-primary)', display: 'block', marginBottom: '6px' }}>AEIT-TECH & Forrajería</span>
+                <p>{lang === 'es' ? 'Estrategia digital en entornos de alta exigencia, desarrollo de calendarios editoriales y optimización de tácticas.' : 'Digital strategy in high-demand environments, editorial calendar development, and tactics optimization.'}</p>
+              </div>
+            </div>
           </div>
         </motion.div>
 
+      </div>
+
+      <div className={`container ${styles.valuePropContainer}`}>
+        <motion.div 
+          className={styles.valueText}
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+        >
+          <h2 className={styles.valueTitle} dangerouslySetInnerHTML={renderHTML(t.value_title)}></h2>
+          <p>{t.value_desc1}</p>
+          <p>{t.value_desc2}</p>
+        </motion.div>
+        
+        <div className={styles.valueStats}>
+          <motion.div 
+            className={styles.statBox}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            <span className={styles.statNum}>100%</span>
+            <span className={styles.statLabel}>{t.stat1}</span>
+          </motion.div>
+          <motion.div 
+            className={styles.statBox}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+          >
+            <span className={styles.statNum}>3x</span>
+            <span className={styles.statLabel}>{t.stat2}</span>
+          </motion.div>
+        </div>
       </div>
 
       <CVModal 

@@ -9,12 +9,56 @@
 
 .heroBg {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   z-index: -1;
-  background: radial-gradient(circle at 50% -20%, rgba(139, 92, 246, 0.15), transparent 70%);
+  background: var(--bg-main);
+  overflow: hidden;
+}
+
+.blob1, .blob2, .blob3 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+  animation: floatBlob 15s infinite alternate ease-in-out;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.blob1 {
+  top: -10%; left: -10%;
+  width: 400px; height: 400px;
+  background: var(--accent-primary);
+}
+
+.blob2 {
+  bottom: -10%; right: -10%;
+  width: 500px; height: 500px;
+  background: var(--accent-secondary);
+  animation-delay: -5s;
+}
+
+.blob3 {
+  top: 40%; left: 60%;
+  width: 300px; height: 300px;
+  background: #3b82f6; /* Blueish accent */
+  animation-delay: -10s;
+}
+
+.glassOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 15, 0.4);
+  /* Eliminado backdrop-filter por alto impacto en rendimiento al hacer scroll */
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+@keyframes floatBlob {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0, 0) scale(1); }
 }
 
 .heroContainer {
@@ -30,6 +74,8 @@
   position: relative;
   z-index: 10;
 }
+
+
 
 .badge {
   display: inline-block;
@@ -93,6 +139,8 @@
   filter: blur(40px);
   z-index: 0;
   animation: pulse 4s ease-in-out infinite alternate;
+  will-change: transform, opacity;
+  transform: translateZ(0);
 }
 
 .profileImage {
